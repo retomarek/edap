@@ -16,7 +16,7 @@ here is the second
 
 ![Image Caption](.gitbook/assets/_strahlung.png)
 
-{% hint style="info" %}
+{% hint style="success" %}
 This is a hint.
 {% endhint %}
 
