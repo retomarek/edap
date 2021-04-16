@@ -1,7 +1,7 @@
 # edap
 
-short description
-
+> **See [https://retomarek.github.io/edap/](https://retomarek.github.io/edap/)**
+> 
 ## Usage
 
 ### Building the book
