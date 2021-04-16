@@ -2,7 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: intro
-- file: content
+- file: preface
+- file: gettingStarted
   sections:
-    - file: markdown
-    - file: notebooks
+    - file: /partGettingStarted/installPython
+- file: pythonBasics
+  sections:
+    - file: /partPythonBasics/loadingData
+- file: dataVis
+  sections:
+    - file: /partDataVis/vis1
