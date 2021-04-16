@@ -1,6 +1,25 @@
-# edap
-Energy Data Analysis with Python
+# Initial page
 
-Personal notes on how I progress with Python by starting on scratch...
+## Getting Super Powers
 
-The goal is on long term to have something similar like https://hslu-ige-laes.github.io/edar/
+Becoming a super hero is a fairly straight forward process:
+
+```
+$ give me super-powers
+```
+
+{% hint style="info" %}
+ Super-powers are granted randomly so please submit an issue if you're not happy with yours.
+{% endhint %}
+
+Once you're strong enough, save the world:
+
+{% code title="hello.sh" %}
+```bash
+# Ain't no code for that yet, sorry
+echo 'You got to trust me on this, I saved the world'
+```
+{% endcode %}
+
+
+
