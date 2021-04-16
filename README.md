@@ -1,4 +1,4 @@
-# edap - Energy Data Analysis with Python
+# Energy Data Analysis with Python
 
 ## Getting Super Powers
 
