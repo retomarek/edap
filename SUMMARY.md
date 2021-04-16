@@ -4,6 +4,5 @@
 
 ## Chapter 1
 
-* [test](chapter-1/test.md)
 * [Untitled](chapter-1/untitled.md)
 
