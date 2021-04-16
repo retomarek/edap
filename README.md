@@ -1,6 +1,6 @@
 # edap
 
-> **See [https://hslu-ige-laes.github.io/edar/](https://retomarek.github.io/edap/)**
+> **See [https://retomarek.github.io/edap/](https://retomarek.github.io/edap/)**
 > 
 ## Usage
 
