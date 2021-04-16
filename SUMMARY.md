@@ -1,6 +1,5 @@
 # Table of contents
 
-* [edap](README.md)
+* [edap - Energy Data Analysis with Python](README.md)
 * [Untitled](untitled.md)
-* [adsf](http://test.com)
 
