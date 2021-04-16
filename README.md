@@ -1,7 +1,7 @@
 # edap
 
-short description
-
+> **See [https://hslu-ige-laes.github.io/edar/](https://retomarek.github.io/edap/)**
+> 
 ## Usage
 
 ### Building the book
