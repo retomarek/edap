@@ -14,7 +14,7 @@ here is the second
 {% endtab %}
 {% endtabs %}
 
-![Image Caption](.gitbook/assets/_strahlung.png)
+![Image Caption](../.gitbook/assets/_strahlung.png)
 
 {% hint style="success" %}
 This is a hint.
