@@ -1,5 +1,5 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Energy Data Analysis in Python](README.md)
 * [test](test.md)
 
