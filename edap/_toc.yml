@@ -9,8 +9,8 @@
 - file: pythonBasics
   sections:
     - file: /partPythonBasics/loadingData
-    - file: /partPythonBasics/eda
     - file: /partPythonBasics/dataWrangling
+    - file: /partPythonBasics/eda
 - file: dataVis
   sections:
     - file: /partDataVis/vis1
