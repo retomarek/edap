@@ -1,5 +1,5 @@
-Energy Data Analysis in Python
-==============================
+Energy Data Analysis with Python
+================================
 
 ![cover](/images/cover.jpg)
 
