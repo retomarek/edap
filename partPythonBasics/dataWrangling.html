@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Visualizations" href="../dataVis.html" />
-    <link rel="prev" title="Explorative Data Analysis" href="eda.html" />
+    <link rel="next" title="Explorative Data Analysis" href="eda.html" />
+    <link rel="prev" title="Loading Data" href="loadingData.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -120,14 +120,14 @@
      Loading Data
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="eda.html">
-     Explorative Data Analysis
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Data Wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eda.html">
+     Explorative Data Analysis
     </a>
    </li>
   </ul>
@@ -237,6 +237,11 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-data">
+   Access Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-metadata-for-later-filtering">
    Add Metadata for later filtering
   </a>
@@ -257,6 +262,235 @@
 <h1>Data Wrangling<a class="headerlink" href="#data-wrangling" title="Permalink to this headline">¶</a></h1>
 <p>This chapter gives an overview of the most important data manipulation functions used throughout this book.</p>
 <p>It is a fact that the data import and manipulation part of analyses often takes more time than the actual analysis or visualization itself. This is because the exchange data formats are not standardized and meters and sensors record at different time intervals. Data quality, missing data, data imputation and data cleansing also play a major role.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data set</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/retomarek/edap/main/edap/sampleData/flatTempHum.csv&quot;</span><span class="p">,</span>
+                 <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>FlatA_Hum</th>
+      <th>FlatA_Temp</th>
+      <th>FlatB_Hum</th>
+      <th>FlatB_Temp</th>
+      <th>FlatC_Hum</th>
+      <th>FlatC_Temp</th>
+      <th>FlatD_Hum</th>
+      <th>FlatD_Temp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018-10-03 00:00:00</td>
+      <td>53.0</td>
+      <td>24.43</td>
+      <td>38.8</td>
+      <td>22.40</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.43</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2018-10-03 01:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>38.8</td>
+      <td>22.40</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.40</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018-10-03 02:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>39.3</td>
+      <td>22.40</td>
+      <td>44.7</td>
+      <td>24.5</td>
+      <td>48.3</td>
+      <td>24.38</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2018-10-03 03:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>40.3</td>
+      <td>22.40</td>
+      <td>45.0</td>
+      <td>24.5</td>
+      <td>48.0</td>
+      <td>24.33</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-10-03 04:00:00</td>
+      <td>53.3</td>
+      <td>24.40</td>
+      <td>41.0</td>
+      <td>22.37</td>
+      <td>45.2</td>
+      <td>24.5</td>
+      <td>47.7</td>
+      <td>24.30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="access-data">
+<h2>Access Data<a class="headerlink" href="#access-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FlatA_Temp&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        24.43
+1        24.40
+2        24.40
+3        24.40
+4        24.40
+         ...  
+17176      NaN
+17177      NaN
+17178      NaN
+17179      NaN
+17180      NaN
+Name: FlatA_Temp, Length: 17181, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Note that a Series is returned</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;FlatA_Temp&quot;</span><span class="p">,</span> <span class="s2">&quot;FlatA_Hum&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FlatA_Temp</th>
+      <th>FlatA_Hum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>24.43</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>24.40</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>24.40</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>24.40</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.40</td>
+      <td>53.3</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>17176</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17177</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17178</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17179</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17180</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>17181 rows × 2 columns</p>
+</div></div></div>
+</div>
+<blockquote>
+<div><p>Note that a Dataframe is returned</p>
+</div></blockquote>
+</div>
 <div class="section" id="add-metadata-for-later-filtering">
 <h2>Add Metadata for later filtering<a class="headerlink" href="#add-metadata-for-later-filtering" title="Permalink to this headline">¶</a></h2>
 <p>Firstly we have to load a dataset into a dataframe</p>
@@ -288,8 +522,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="eda.html" title="previous page">Explorative Data Analysis</a>
-    <a class='right-next' id="next-link" href="../dataVis.html" title="next page">Data Visualizations</a>
+    <a class='left-prev' id="prev-link" href="loadingData.html" title="previous page">Loading Data</a>
+    <a class='right-next' id="next-link" href="eda.html" title="next page">Explorative Data Analysis</a>
 
         </div>
         

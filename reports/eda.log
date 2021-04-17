@@ -19,16 +19,16 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 ------------------
 import pandas as pd
 
-df = pd.read_csv("https://github.com/hslu-ige-laes/edar/raw/master/sampleData/flatElectricity.csv",
+df = pd.read_csv("https://raw.githubusercontent.com/retomarek/edap/main/edap/sampleData/flatTempHum.csv",
                  sep = ";")
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-1-ab2db49d2ce5>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-1-7e2e57f605f8>[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0;32mimport[0m [0mpandas[0m [0;32mas[0m [0mpd[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0;34m[0m[0m
-[1;32m      3[0m df = pd.read_csv("https://github.com/hslu-ige-laes/edar/raw/master/sampleData/flatElectricity.csv",
+[1;32m      3[0m df = pd.read_csv("https://raw.githubusercontent.com/retomarek/edap/main/edap/sampleData/flatTempHum.csv",
 [1;32m      4[0m                  sep = ";")
 
 [0;31mModuleNotFoundError[0m: No module named 'pandas'

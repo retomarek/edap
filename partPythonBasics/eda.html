@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Wrangling" href="dataWrangling.html" />
-    <link rel="prev" title="Loading Data" href="loadingData.html" />
+    <link rel="next" title="Data Visualizations" href="../dataVis.html" />
+    <link rel="prev" title="Data Wrangling" href="dataWrangling.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -120,14 +120,14 @@
      Loading Data
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Explorative Data Analysis
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="dataWrangling.html">
      Data Wrangling
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Explorative Data Analysis
     </a>
    </li>
   </ul>
@@ -277,7 +277,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://github.com/hslu-ige-laes/edar/raw/master/sampleData/flatElectricity.csv&quot;</span><span class="p">,</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/retomarek/edap/main/edap/sampleData/flatTempHum.csv&quot;</span><span class="p">,</span>
                  <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -285,10 +285,10 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">ab2db49d2ce5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mf">7e2</span><span class="n">e57f605f8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://github.com/hslu-ige-laes/edar/raw/master/sampleData/flatElectricity.csv&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/retomarek/edap/main/edap/sampleData/flatTempHum.csv&quot;</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>                  <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
@@ -322,52 +322,76 @@
     <tr style="text-align: right;">
       <th></th>
       <th>time</th>
-      <th>FlatA_Ele</th>
-      <th>FlatB_Ele</th>
-      <th>FlatC_Ele</th>
-      <th>FlatD_Ele</th>
+      <th>FlatA_Hum</th>
+      <th>FlatA_Temp</th>
+      <th>FlatB_Hum</th>
+      <th>FlatB_Temp</th>
+      <th>FlatC_Hum</th>
+      <th>FlatC_Temp</th>
+      <th>FlatD_Hum</th>
+      <th>FlatD_Temp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>2018-11-30 23:45:00</td>
-      <td>5619.889</td>
-      <td>7246.254</td>
-      <td>5125.006</td>
-      <td>8387.030</td>
+      <td>2018-10-03 00:00:00</td>
+      <td>53.0</td>
+      <td>24.43</td>
+      <td>38.8</td>
+      <td>22.40</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.43</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2018-12-01 00:00:00</td>
-      <td>5619.904</td>
-      <td>7246.551</td>
-      <td>5125.039</td>
-      <td>8387.085</td>
+      <td>2018-10-03 01:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>38.8</td>
+      <td>22.40</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.40</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2018-12-01 00:15:00</td>
-      <td>5619.929</td>
-      <td>7246.753</td>
-      <td>5125.077</td>
-      <td>8387.137</td>
+      <td>2018-10-03 02:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>39.3</td>
+      <td>22.40</td>
+      <td>44.7</td>
+      <td>24.5</td>
+      <td>48.3</td>
+      <td>24.38</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2018-12-01 00:30:00</td>
-      <td>5619.952</td>
-      <td>7246.933</td>
-      <td>5125.117</td>
-      <td>8387.181</td>
+      <td>2018-10-03 03:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>40.3</td>
+      <td>22.40</td>
+      <td>45.0</td>
+      <td>24.5</td>
+      <td>48.0</td>
+      <td>24.33</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2018-12-01 00:45:00</td>
-      <td>5619.973</td>
-      <td>7247.005</td>
-      <td>5125.153</td>
-      <td>8387.222</td>
+      <td>2018-10-03 04:00:00</td>
+      <td>53.3</td>
+      <td>24.40</td>
+      <td>41.0</td>
+      <td>22.37</td>
+      <td>45.2</td>
+      <td>24.5</td>
+      <td>47.7</td>
+      <td>24.30</td>
     </tr>
     <tr>
       <th>...</th>
@@ -376,50 +400,74 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>52605</th>
-      <td>2020-05-31 23:00:00</td>
-      <td>10467.960</td>
-      <td>12040.055</td>
-      <td>8335.662</td>
-      <td>13832.386</td>
+      <th>17176</th>
+      <td>2020-09-17 16:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>52606</th>
-      <td>2020-05-31 23:15:00</td>
-      <td>10467.966</td>
-      <td>12040.098</td>
-      <td>8335.702</td>
-      <td>13832.429</td>
+      <th>17177</th>
+      <td>2020-09-17 17:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>52607</th>
-      <td>2020-05-31 23:30:00</td>
-      <td>10467.972</td>
-      <td>12040.122</td>
-      <td>8335.733</td>
-      <td>13832.477</td>
+      <th>17178</th>
+      <td>2020-09-17 18:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>52608</th>
-      <td>2020-05-31 23:45:00</td>
-      <td>10467.985</td>
-      <td>12040.150</td>
-      <td>8335.755</td>
-      <td>13832.517</td>
+      <th>17179</th>
+      <td>2020-09-17 19:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>52609</th>
-      <td>2020-06-01 00:00:00</td>
-      <td>10468.004</td>
-      <td>12040.176</td>
-      <td>8335.790</td>
-      <td>13832.551</td>
+      <th>17180</th>
+      <td>2020-09-17 20:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>52610 rows × 5 columns</p>
+<p>17181 rows × 9 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -448,36 +496,52 @@
     <tr style="text-align: right;">
       <th></th>
       <th>time</th>
-      <th>FlatA_Ele</th>
-      <th>FlatB_Ele</th>
-      <th>FlatC_Ele</th>
-      <th>FlatD_Ele</th>
+      <th>FlatA_Hum</th>
+      <th>FlatA_Temp</th>
+      <th>FlatB_Hum</th>
+      <th>FlatB_Temp</th>
+      <th>FlatC_Hum</th>
+      <th>FlatC_Temp</th>
+      <th>FlatD_Hum</th>
+      <th>FlatD_Temp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>2018-11-30 23:45:00</td>
-      <td>5619.889</td>
-      <td>7246.254</td>
-      <td>5125.006</td>
-      <td>8387.030</td>
+      <td>2018-10-03 00:00:00</td>
+      <td>53.0</td>
+      <td>24.43</td>
+      <td>38.8</td>
+      <td>22.4</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.43</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2018-12-01 00:00:00</td>
-      <td>5619.904</td>
-      <td>7246.551</td>
-      <td>5125.039</td>
-      <td>8387.085</td>
+      <td>2018-10-03 01:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>38.8</td>
+      <td>22.4</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.40</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2018-12-01 00:15:00</td>
-      <td>5619.929</td>
-      <td>7246.753</td>
-      <td>5125.077</td>
-      <td>8387.137</td>
+      <td>2018-10-03 02:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>39.3</td>
+      <td>22.4</td>
+      <td>44.7</td>
+      <td>24.5</td>
+      <td>48.3</td>
+      <td>24.38</td>
     </tr>
   </tbody>
 </table>
@@ -509,28 +573,40 @@
     <tr style="text-align: right;">
       <th></th>
       <th>time</th>
-      <th>FlatA_Ele</th>
-      <th>FlatB_Ele</th>
-      <th>FlatC_Ele</th>
-      <th>FlatD_Ele</th>
+      <th>FlatA_Hum</th>
+      <th>FlatA_Temp</th>
+      <th>FlatB_Hum</th>
+      <th>FlatB_Temp</th>
+      <th>FlatC_Hum</th>
+      <th>FlatC_Temp</th>
+      <th>FlatD_Hum</th>
+      <th>FlatD_Temp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>52608</th>
-      <td>2020-05-31 23:45:00</td>
-      <td>10467.985</td>
-      <td>12040.150</td>
-      <td>8335.755</td>
-      <td>13832.517</td>
+      <th>17179</th>
+      <td>2020-09-17 19:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>52609</th>
-      <td>2020-06-01 00:00:00</td>
-      <td>10468.004</td>
-      <td>12040.176</td>
-      <td>8335.790</td>
-      <td>13832.551</td>
+      <th>17180</th>
+      <td>2020-09-17 20:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -543,7 +619,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(52610, 5)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(17181, 9)
 </pre></div>
 </div>
 </div>
@@ -555,19 +631,24 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time          object
-FlatA_Ele    float64
-FlatB_Ele    float64
-FlatC_Ele    float64
-FlatD_Ele    float64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time           object
+FlatA_Hum     float64
+FlatA_Temp    float64
+FlatB_Hum     float64
+FlatB_Temp    float64
+FlatC_Hum     float64
+FlatC_Temp    float64
+FlatD_Hum     float64
+FlatD_Temp    float64
 dtype: object
 </pre></div>
 </div>
 </div>
 </div>
-<blockquote>
-<div><p>Hint: an objects normally points to unclean data, e.g. the time which should be a datetime object</p>
-</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The type “object” normally points to unclean data, e.g. the time which should be a datetime object</p>
+</div>
 </div>
 <div class="section" id="names">
 <h2>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h2>
@@ -578,7 +659,9 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;time&#39;, &#39;FlatA_Ele&#39;, &#39;FlatB_Ele&#39;, &#39;FlatC_Ele&#39;, &#39;FlatD_Ele&#39;], dtype=&#39;object&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;time&#39;, &#39;FlatA_Hum&#39;, &#39;FlatA_Temp&#39;, &#39;FlatB_Hum&#39;, &#39;FlatB_Temp&#39;,
+       &#39;FlatC_Hum&#39;, &#39;FlatC_Temp&#39;, &#39;FlatD_Hum&#39;, &#39;FlatD_Temp&#39;],
+      dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -611,68 +694,104 @@ dtype: object
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>FlatA_Ele</th>
-      <th>FlatB_Ele</th>
-      <th>FlatC_Ele</th>
-      <th>FlatD_Ele</th>
+      <th>FlatA_Hum</th>
+      <th>FlatA_Temp</th>
+      <th>FlatB_Hum</th>
+      <th>FlatB_Temp</th>
+      <th>FlatC_Hum</th>
+      <th>FlatC_Temp</th>
+      <th>FlatD_Hum</th>
+      <th>FlatD_Temp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>count</th>
-      <td>50589.000000</td>
-      <td>51893.000000</td>
-      <td>51894.000000</td>
-      <td>51873.000000</td>
+      <td>16484.000000</td>
+      <td>16484.000000</td>
+      <td>16470.000000</td>
+      <td>16470.000000</td>
+      <td>16497.000000</td>
+      <td>16497.000000</td>
+      <td>16354.000000</td>
+      <td>16354.000000</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>7963.461884</td>
-      <td>9750.414189</td>
-      <td>6592.128982</td>
-      <td>11025.001172</td>
+      <td>54.336599</td>
+      <td>23.786531</td>
+      <td>49.666697</td>
+      <td>23.404749</td>
+      <td>48.895339</td>
+      <td>23.964698</td>
+      <td>49.299156</td>
+      <td>24.134841</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>1404.320109</td>
-      <td>1402.263150</td>
-      <td>895.101293</td>
-      <td>1502.320746</td>
+      <td>6.300389</td>
+      <td>1.273444</td>
+      <td>6.903822</td>
+      <td>1.470354</td>
+      <td>6.487768</td>
+      <td>1.360014</td>
+      <td>6.524641</td>
+      <td>1.308097</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>5619.889000</td>
-      <td>7246.254000</td>
-      <td>5125.006000</td>
-      <td>8387.030000</td>
+      <td>23.500000</td>
+      <td>19.100000</td>
+      <td>25.000000</td>
+      <td>20.530000</td>
+      <td>22.500000</td>
+      <td>21.380000</td>
+      <td>20.500000</td>
+      <td>18.120000</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>6833.084000</td>
-      <td>8575.643000</td>
-      <td>5809.798250</td>
-      <td>9782.384000</td>
+      <td>51.000000</td>
+      <td>22.800000</td>
+      <td>44.700000</td>
+      <td>22.320000</td>
+      <td>44.300000</td>
+      <td>22.880000</td>
+      <td>44.300000</td>
+      <td>23.030000</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>7828.051000</td>
-      <td>9700.237000</td>
-      <td>6594.644500</td>
-      <td>10962.363000</td>
+      <td>54.800000</td>
+      <td>23.480000</td>
+      <td>50.000000</td>
+      <td>23.000000</td>
+      <td>49.200000</td>
+      <td>23.600000</td>
+      <td>49.000000</td>
+      <td>23.700000</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>9218.736000</td>
-      <td>10997.148000</td>
-      <td>7317.123000</td>
-      <td>12253.393000</td>
+      <td>58.300000</td>
+      <td>24.600000</td>
+      <td>54.500000</td>
+      <td>24.100000</td>
+      <td>53.800000</td>
+      <td>24.800000</td>
+      <td>54.000000</td>
+      <td>25.200000</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>10468.004000</td>
-      <td>12040.176000</td>
-      <td>8335.790000</td>
-      <td>13832.551000</td>
+      <td>76.500000</td>
+      <td>28.880000</td>
+      <td>73.300000</td>
+      <td>29.120000</td>
+      <td>69.800000</td>
+      <td>28.800000</td>
+      <td>69.800000</td>
+      <td>28.030000</td>
     </tr>
   </tbody>
 </table>
@@ -704,24 +823,36 @@ dtype: object
     <tr style="text-align: right;">
       <th></th>
       <th>time</th>
-      <th>FlatA_Ele</th>
-      <th>FlatB_Ele</th>
-      <th>FlatC_Ele</th>
-      <th>FlatD_Ele</th>
+      <th>FlatA_Hum</th>
+      <th>FlatA_Temp</th>
+      <th>FlatB_Hum</th>
+      <th>FlatB_Temp</th>
+      <th>FlatC_Hum</th>
+      <th>FlatC_Temp</th>
+      <th>FlatD_Hum</th>
+      <th>FlatD_Temp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>count</th>
-      <td>52610</td>
-      <td>50589.000000</td>
-      <td>51893.000000</td>
-      <td>51894.000000</td>
-      <td>51873.000000</td>
+      <td>17181</td>
+      <td>16484.000000</td>
+      <td>16484.000000</td>
+      <td>16470.000000</td>
+      <td>16470.000000</td>
+      <td>16497.000000</td>
+      <td>16497.000000</td>
+      <td>16354.000000</td>
+      <td>16354.000000</td>
     </tr>
     <tr>
       <th>unique</th>
-      <td>52610</td>
+      <td>17181</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -729,7 +860,11 @@ dtype: object
     </tr>
     <tr>
       <th>top</th>
-      <td>2019-08-27 13:30:00</td>
+      <td>2019-11-03 16:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -742,66 +877,159 @@ dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>mean</th>
       <td>NaN</td>
-      <td>7963.461884</td>
-      <td>9750.414189</td>
-      <td>6592.128982</td>
-      <td>11025.001172</td>
+      <td>54.336599</td>
+      <td>23.786531</td>
+      <td>49.666697</td>
+      <td>23.404749</td>
+      <td>48.895339</td>
+      <td>23.964698</td>
+      <td>49.299156</td>
+      <td>24.134841</td>
     </tr>
     <tr>
       <th>std</th>
       <td>NaN</td>
-      <td>1404.320109</td>
-      <td>1402.263150</td>
-      <td>895.101293</td>
-      <td>1502.320746</td>
+      <td>6.300389</td>
+      <td>1.273444</td>
+      <td>6.903822</td>
+      <td>1.470354</td>
+      <td>6.487768</td>
+      <td>1.360014</td>
+      <td>6.524641</td>
+      <td>1.308097</td>
     </tr>
     <tr>
       <th>min</th>
       <td>NaN</td>
-      <td>5619.889000</td>
-      <td>7246.254000</td>
-      <td>5125.006000</td>
-      <td>8387.030000</td>
+      <td>23.500000</td>
+      <td>19.100000</td>
+      <td>25.000000</td>
+      <td>20.530000</td>
+      <td>22.500000</td>
+      <td>21.380000</td>
+      <td>20.500000</td>
+      <td>18.120000</td>
     </tr>
     <tr>
       <th>25%</th>
       <td>NaN</td>
-      <td>6833.084000</td>
-      <td>8575.643000</td>
-      <td>5809.798250</td>
-      <td>9782.384000</td>
+      <td>51.000000</td>
+      <td>22.800000</td>
+      <td>44.700000</td>
+      <td>22.320000</td>
+      <td>44.300000</td>
+      <td>22.880000</td>
+      <td>44.300000</td>
+      <td>23.030000</td>
     </tr>
     <tr>
       <th>50%</th>
       <td>NaN</td>
-      <td>7828.051000</td>
-      <td>9700.237000</td>
-      <td>6594.644500</td>
-      <td>10962.363000</td>
+      <td>54.800000</td>
+      <td>23.480000</td>
+      <td>50.000000</td>
+      <td>23.000000</td>
+      <td>49.200000</td>
+      <td>23.600000</td>
+      <td>49.000000</td>
+      <td>23.700000</td>
     </tr>
     <tr>
       <th>75%</th>
       <td>NaN</td>
-      <td>9218.736000</td>
-      <td>10997.148000</td>
-      <td>7317.123000</td>
-      <td>12253.393000</td>
+      <td>58.300000</td>
+      <td>24.600000</td>
+      <td>54.500000</td>
+      <td>24.100000</td>
+      <td>53.800000</td>
+      <td>24.800000</td>
+      <td>54.000000</td>
+      <td>25.200000</td>
     </tr>
     <tr>
       <th>max</th>
       <td>NaN</td>
-      <td>10468.004000</td>
-      <td>12040.176000</td>
-      <td>8335.790000</td>
-      <td>13832.551000</td>
+      <td>76.500000</td>
+      <td>28.880000</td>
+      <td>73.300000</td>
+      <td>29.120000</td>
+      <td>69.800000</td>
+      <td>28.800000</td>
+      <td>69.800000</td>
+      <td>28.030000</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FlatA_Temp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FlatA_Temp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.88
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FlatA_Temp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.48
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FlatA_Temp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.786531181752057
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FlatA_Temp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/eda_18_1.png" src="../_images/eda_18_1.png" />
+</div>
 </div>
 </div>
 </div>
@@ -831,8 +1059,8 @@ dtype: object
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="loadingData.html" title="previous page">Loading Data</a>
-    <a class='right-next' id="next-link" href="dataWrangling.html" title="next page">Data Wrangling</a>
+    <a class='left-prev' id="prev-link" href="dataWrangling.html" title="previous page">Data Wrangling</a>
+    <a class='right-next' id="next-link" href="../dataVis.html" title="next page">Data Visualizations</a>
 
         </div>
         
