@@ -1,5 +1,7 @@
-Welcome to edap
-===============
+Energy Data Analysis in Python
+==============================
+
+![cover](../images/cover.jpg)
 
 This short book gives you an overview of the programming language python and its ability to analyze and visualize time series in the context of building energy and comfort.
 
