@@ -292,19 +292,99 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">b96aed8af64e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Load data set</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/retomarek/edap/main/edap/sampleData/flatTempHum.csv&quot;</span><span class="p">,</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>FlatA_Hum</th>
+      <th>FlatA_Temp</th>
+      <th>FlatB_Hum</th>
+      <th>FlatB_Temp</th>
+      <th>FlatC_Hum</th>
+      <th>FlatC_Temp</th>
+      <th>FlatD_Hum</th>
+      <th>FlatD_Temp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018-10-03 00:00:00</td>
+      <td>53.0</td>
+      <td>24.43</td>
+      <td>38.8</td>
+      <td>22.40</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.43</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2018-10-03 01:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>38.8</td>
+      <td>22.40</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.40</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018-10-03 02:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>39.3</td>
+      <td>22.40</td>
+      <td>44.7</td>
+      <td>24.5</td>
+      <td>48.3</td>
+      <td>24.38</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2018-10-03 03:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>40.3</td>
+      <td>22.40</td>
+      <td>45.0</td>
+      <td>24.5</td>
+      <td>48.0</td>
+      <td>24.33</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-10-03 04:00:00</td>
+      <td>53.3</td>
+      <td>24.40</td>
+      <td>41.0</td>
+      <td>22.37</td>
+      <td>45.2</td>
+      <td>24.5</td>
+      <td>47.7</td>
+      <td>24.30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="section" id="access-data">
 <h2>Access Data<a class="headerlink" href="#access-data" title="Permalink to this headline">¶</a></h2>
