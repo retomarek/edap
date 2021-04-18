@@ -130,6 +130,11 @@
      Explorative Data Analysis
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="timeSeries.html">
+     Time Series
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -240,6 +245,18 @@
   <a class="reference internal nav-link" href="#access-data">
    Access Data
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-values-of-column-s">
+     get values of column(s)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-and-change-column-names">
+   get and change column names
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-metadata-for-later-filtering">
@@ -291,6 +308,8 @@
 </div>
 <div class="section" id="access-data">
 <h2>Access Data<a class="headerlink" href="#access-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-values-of-column-s">
+<h3>get values of column(s)<a class="headerlink" href="#get-values-of-column-s" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FlatA_Temp&quot;</span><span class="p">]</span>
@@ -411,6 +430,24 @@ Name: FlatA_Temp, Length: 17181, dtype: float64
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A Dataframe is returned!</p>
+</div>
+</div>
+</div>
+<div class="section" id="get-and-change-column-names">
+<h2>get and change column names<a class="headerlink" href="#get-and-change-column-names" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;time&#39;, &#39;FlatA_Hum&#39;, &#39;FlatA_Temp&#39;, &#39;FlatB_Hum&#39;, &#39;FlatB_Temp&#39;,
+       &#39;FlatC_Hum&#39;, &#39;FlatC_Temp&#39;, &#39;FlatD_Hum&#39;, &#39;FlatD_Temp&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="add-metadata-for-later-filtering">

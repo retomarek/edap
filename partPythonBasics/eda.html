@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Visualizations" href="../dataVis.html" />
+    <link rel="next" title="Time Series" href="timeSeries.html" />
     <link rel="prev" title="Data Wrangling" href="dataWrangling.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -128,6 +128,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Explorative Data Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="timeSeries.html">
+     Time Series
     </a>
    </li>
   </ul>
@@ -242,13 +247,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#column-names">
-   Column Names
+  <a class="reference internal nav-link" href="#descriptive-statistics">
+   Descriptive Statistics
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#descriptive-statistics">
-   Descriptive Statistics
+  <a class="reference internal nav-link" href="#histograms">
+   Histograms
   </a>
  </li>
 </ul>
@@ -650,23 +655,6 @@ dtype: object
 <p>The type “object” normally points to unclean data, e.g. the time which should be a datetime object</p>
 </div>
 </div>
-<div class="section" id="column-names">
-<h2>Column Names<a class="headerlink" href="#column-names" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;time&#39;, &#39;FlatA_Hum&#39;, &#39;FlatA_Temp&#39;, &#39;FlatB_Hum&#39;, &#39;FlatB_Temp&#39;,
-       &#39;FlatC_Hum&#39;, &#39;FlatC_Temp&#39;, &#39;FlatD_Hum&#39;, &#39;FlatD_Temp&#39;],
-      dtype=&#39;object&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 <div class="section" id="descriptive-statistics">
 <h2>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -1018,6 +1006,9 @@ dtype: object
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="histograms">
+<h2>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FlatA_Temp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
@@ -1028,7 +1019,7 @@ dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/eda_18_1.png" src="../_images/eda_18_1.png" />
+<img alt="../_images/eda_17_1.png" src="../_images/eda_17_1.png" />
 </div>
 </div>
 </div>
@@ -1060,7 +1051,7 @@ dtype: object
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="dataWrangling.html" title="previous page">Data Wrangling</a>
-    <a class='right-next' id="next-link" href="../dataVis.html" title="next page">Data Visualizations</a>
+    <a class='right-next' id="next-link" href="timeSeries.html" title="next page">Time Series</a>
 
         </div>
         
