@@ -11,6 +11,7 @@
     - file: /partPythonBasics/loadingData
     - file: /partPythonBasics/dataWrangling
     - file: /partPythonBasics/eda
+    - file: /partPythonBasics/timeSeries
 - file: dataVis
   sections:
     - file: /partDataVis/vis1
