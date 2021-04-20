@@ -8,7 +8,7 @@
     - file: /partGettingStarted/installPython
 - file: pythonBasics
   sections:
-    - file: /partPythonBasics/loadingData
+    - file: /partPythonBasics/collectData
     - file: /partPythonBasics/dataWrangling
     - file: /partPythonBasics/eda
     - file: /partPythonBasics/timeSeries
