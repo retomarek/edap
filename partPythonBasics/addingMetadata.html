@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Time Series &#8212; Energy Data Analysis with Python</title>
+    <title>Add Metadata for later filtering &#8212; Energy Data Analysis with Python</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Visualizations" href="../dataVis.html" />
-    <link rel="prev" title="Explorative Data Analysis" href="eda.html" />
+    <link rel="next" title="Data Wrangling" href="dataWrangling.html" />
+    <link rel="prev" title="Collect Data" href="collectData.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -120,8 +120,8 @@
      Collect Data
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="addingMetadata.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Add Metadata for later filtering
     </a>
    </li>
@@ -135,8 +135,8 @@
      Explorative Data Analysis
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="timeSeries.html">
      Time Series
     </a>
    </li>
@@ -198,7 +198,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/partPythonBasics/timeSeries.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/partPythonBasics/addingMetadata.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -223,7 +223,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/partPythonBasics/timeSeries.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/partPythonBasics/addingMetadata.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -247,18 +247,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#datetime-index">
-   Datetime index
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#upsampling">
-   Upsampling
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#downsampling">
-   Downsampling
+  <a class="reference internal nav-link" href="#year-month-day-day-of-week">
+   Year, Month, Day, Day of Week
   </a>
  </li>
 </ul>
@@ -273,126 +263,22 @@
         
               <div>
                 
-  <div class="section" id="time-series">
-<h1>Time Series<a class="headerlink" href="#time-series" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="add-metadata-for-later-filtering">
+<h1>Add Metadata for later filtering<a class="headerlink" href="#add-metadata-for-later-filtering" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data set</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/retomarek/edap/main/edap/sampleData/flatTempHum.csv&quot;</span><span class="p">,</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/retomarek/edap/main/edap/sampleData/flatElectricity.csv&quot;</span><span class="p">,</span>
                  <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="n">df</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>time</th>
-      <th>FlatA_Hum</th>
-      <th>FlatA_Temp</th>
-      <th>FlatB_Hum</th>
-      <th>FlatB_Temp</th>
-      <th>FlatC_Hum</th>
-      <th>FlatC_Temp</th>
-      <th>FlatD_Hum</th>
-      <th>FlatD_Temp</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2018-10-03 00:00:00</td>
-      <td>53.0</td>
-      <td>24.43</td>
-      <td>38.8</td>
-      <td>22.40</td>
-      <td>44.0</td>
-      <td>24.5</td>
-      <td>49.0</td>
-      <td>24.43</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2018-10-03 01:00:00</td>
-      <td>53.0</td>
-      <td>24.40</td>
-      <td>38.8</td>
-      <td>22.40</td>
-      <td>44.0</td>
-      <td>24.5</td>
-      <td>49.0</td>
-      <td>24.40</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2018-10-03 02:00:00</td>
-      <td>53.0</td>
-      <td>24.40</td>
-      <td>39.3</td>
-      <td>22.40</td>
-      <td>44.7</td>
-      <td>24.5</td>
-      <td>48.3</td>
-      <td>24.38</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2018-10-03 03:00:00</td>
-      <td>53.0</td>
-      <td>24.40</td>
-      <td>40.3</td>
-      <td>22.40</td>
-      <td>45.0</td>
-      <td>24.5</td>
-      <td>48.0</td>
-      <td>24.33</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2018-10-03 04:00:00</td>
-      <td>53.3</td>
-      <td>24.40</td>
-      <td>41.0</td>
-      <td>22.37</td>
-      <td>45.2</td>
-      <td>24.5</td>
-      <td>47.7</td>
-      <td>24.30</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="section" id="datetime-index">
-<h2>Datetime index<a class="headerlink" href="#datetime-index" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set index and remove column</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># remove duplicates</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;FlatA_Ele&quot;</span><span class="p">]]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;FlatA_Ele&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -417,99 +303,54 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>FlatA_Hum</th>
-      <th>FlatA_Temp</th>
-      <th>FlatB_Hum</th>
-      <th>FlatB_Temp</th>
-      <th>FlatC_Hum</th>
-      <th>FlatC_Temp</th>
-      <th>FlatD_Hum</th>
-      <th>FlatD_Temp</th>
+      <th>value</th>
     </tr>
     <tr>
       <th>time</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2018-10-03 00:00:00</th>
-      <td>53.0</td>
-      <td>24.43</td>
-      <td>38.8</td>
-      <td>22.40</td>
-      <td>44.0</td>
-      <td>24.5</td>
-      <td>49.0</td>
-      <td>24.43</td>
+      <th>2018-11-30 23:45:00</th>
+      <td>5619.889</td>
     </tr>
     <tr>
-      <th>2018-10-03 01:00:00</th>
-      <td>53.0</td>
-      <td>24.40</td>
-      <td>38.8</td>
-      <td>22.40</td>
-      <td>44.0</td>
-      <td>24.5</td>
-      <td>49.0</td>
-      <td>24.40</td>
+      <th>2018-12-01 00:00:00</th>
+      <td>5619.904</td>
     </tr>
     <tr>
-      <th>2018-10-03 02:00:00</th>
-      <td>53.0</td>
-      <td>24.40</td>
-      <td>39.3</td>
-      <td>22.40</td>
-      <td>44.7</td>
-      <td>24.5</td>
-      <td>48.3</td>
-      <td>24.38</td>
+      <th>2018-12-01 00:15:00</th>
+      <td>5619.929</td>
     </tr>
     <tr>
-      <th>2018-10-03 03:00:00</th>
-      <td>53.0</td>
-      <td>24.40</td>
-      <td>40.3</td>
-      <td>22.40</td>
-      <td>45.0</td>
-      <td>24.5</td>
-      <td>48.0</td>
-      <td>24.33</td>
+      <th>2018-12-01 00:30:00</th>
+      <td>5619.952</td>
     </tr>
     <tr>
-      <th>2018-10-03 04:00:00</th>
-      <td>53.3</td>
-      <td>24.40</td>
-      <td>41.0</td>
-      <td>22.37</td>
-      <td>45.2</td>
-      <td>24.5</td>
-      <td>47.7</td>
-      <td>24.30</td>
+      <th>2018-12-01 00:45:00</th>
+      <td>5619.973</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The index column with 0, 1, 2 etc. has gone and now datetime is the index!</p>
-</div>
-</div>
-<div class="section" id="upsampling">
-<h2>Upsampling<a class="headerlink" href="#upsampling" title="Permalink to this headline">¶</a></h2>
-<p>Increase the frequency of the samples, such as from hours to 15min</p>
+<div class="section" id="year-month-day-day-of-week">
+<h2>Year, Month, Day, Day of Week<a class="headerlink" href="#year-month-day-day-of-week" title="Permalink to this headline">¶</a></h2>
+<p>To e.g. group, filter and aggregate data we need eventually the date splitted up in day, month and year</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df15min</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;15min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
-<span class="n">df15min</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">day</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;dateString&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">hour</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;minute&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">minute</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;second&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">second</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;dayofweek&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">dayofweek</span> <span class="c1"># 0=Mo, 6=Su</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;dayofweekString&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;timeDec&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;hour&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;minute&quot;</span><span class="p">]</span><span class="o">/</span><span class="mi">60</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;second&quot;</span><span class="p">]</span><span class="o">/</span><span class="mi">3600</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -532,17 +373,21 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>FlatA_Hum</th>
-      <th>FlatA_Temp</th>
-      <th>FlatB_Hum</th>
-      <th>FlatB_Temp</th>
-      <th>FlatC_Hum</th>
-      <th>FlatC_Temp</th>
-      <th>FlatD_Hum</th>
-      <th>FlatD_Temp</th>
+      <th>value</th>
+      <th>year</th>
+      <th>month</th>
+      <th>day</th>
+      <th>hour</th>
+      <th>minute</th>
+      <th>second</th>
+      <th>dayofweek</th>
+      <th>dayofweekString</th>
+      <th>timeDec</th>
     </tr>
     <tr>
       <th>time</th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -555,84 +400,74 @@
   </thead>
   <tbody>
     <tr>
-      <th>2018-10-03 00:00:00</th>
-      <td>53.0</td>
-      <td>24.4300</td>
-      <td>38.8</td>
-      <td>22.4</td>
-      <td>44.0</td>
-      <td>24.5</td>
-      <td>49.0</td>
-      <td>24.4300</td>
+      <th>2018-11-30 23:45:00</th>
+      <td>5619.889</td>
+      <td>2018</td>
+      <td>11</td>
+      <td>30</td>
+      <td>23</td>
+      <td>45</td>
+      <td>0</td>
+      <td>4</td>
+      <td>Fri</td>
+      <td>23.75</td>
     </tr>
     <tr>
-      <th>2018-10-03 00:15:00</th>
-      <td>53.0</td>
-      <td>24.4225</td>
-      <td>38.8</td>
-      <td>22.4</td>
-      <td>44.0</td>
-      <td>24.5</td>
-      <td>49.0</td>
-      <td>24.4225</td>
+      <th>2018-12-01 00:00:00</th>
+      <td>5619.904</td>
+      <td>2018</td>
+      <td>12</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>Sat</td>
+      <td>0.00</td>
     </tr>
     <tr>
-      <th>2018-10-03 00:30:00</th>
-      <td>53.0</td>
-      <td>24.4150</td>
-      <td>38.8</td>
-      <td>22.4</td>
-      <td>44.0</td>
-      <td>24.5</td>
-      <td>49.0</td>
-      <td>24.4150</td>
+      <th>2018-12-01 00:15:00</th>
+      <td>5619.929</td>
+      <td>2018</td>
+      <td>12</td>
+      <td>1</td>
+      <td>0</td>
+      <td>15</td>
+      <td>0</td>
+      <td>5</td>
+      <td>Sat</td>
+      <td>0.25</td>
     </tr>
     <tr>
-      <th>2018-10-03 00:45:00</th>
-      <td>53.0</td>
-      <td>24.4075</td>
-      <td>38.8</td>
-      <td>22.4</td>
-      <td>44.0</td>
-      <td>24.5</td>
-      <td>49.0</td>
-      <td>24.4075</td>
+      <th>2018-12-01 00:30:00</th>
+      <td>5619.952</td>
+      <td>2018</td>
+      <td>12</td>
+      <td>1</td>
+      <td>0</td>
+      <td>30</td>
+      <td>0</td>
+      <td>5</td>
+      <td>Sat</td>
+      <td>0.50</td>
     </tr>
     <tr>
-      <th>2018-10-03 01:00:00</th>
-      <td>53.0</td>
-      <td>24.4000</td>
-      <td>38.8</td>
-      <td>22.4</td>
-      <td>44.0</td>
-      <td>24.5</td>
-      <td>49.0</td>
-      <td>24.4000</td>
+      <th>2018-12-01 00:45:00</th>
+      <td>5619.973</td>
+      <td>2018</td>
+      <td>12</td>
+      <td>1</td>
+      <td>0</td>
+      <td>45</td>
+      <td>0</td>
+      <td>5</td>
+      <td>Sat</td>
+      <td>0.75</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Resample Methods are</p>
-<ul class="simple">
-<li><p>.interpolate(method=’linear’)</p></li>
-<li><p>.interpolate(method=’spline’, order=2)</p></li>
-<li><p>.mean()</p></li>
-<li><p>.bfill()[:15]</p></li>
-<li><p>.pad()[:15]</p></li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Other Frequencies</p>
-<p><img alt="resampleOptions" src="../_images/pythonBasics_resampleOptions.png" /></p>
-</div>
-</div>
-<div class="section" id="downsampling">
-<h2>Downsampling<a class="headerlink" href="#downsampling" title="Permalink to this headline">¶</a></h2>
-<p>Decrease the frequency of the samples, such as from hours to days</p>
 </div>
 </div>
 
@@ -661,8 +496,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="eda.html" title="previous page">Explorative Data Analysis</a>
-    <a class='right-next' id="next-link" href="../dataVis.html" title="next page">Data Visualizations</a>
+    <a class='left-prev' id="prev-link" href="collectData.html" title="previous page">Collect Data</a>
+    <a class='right-next' id="next-link" href="dataWrangling.html" title="next page">Data Wrangling</a>
 
         </div>
         

@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Explorative Data Analysis" href="eda.html" />
-    <link rel="prev" title="Collect Data" href="collectData.html" />
+    <link rel="prev" title="Add Metadata for later filtering" href="addingMetadata.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -118,6 +118,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="collectData.html">
      Collect Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="addingMetadata.html">
+     Add Metadata for later filtering
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -242,6 +247,16 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wide-to-long">
+   wide to long
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#long-to-wide">
+   long to wide
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#access-data">
    Access Data
   </a>
@@ -254,14 +269,31 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-and-change-column-names">
-   get and change column names
+  <a class="reference internal nav-link" href="#rename-column-name-s">
+   Rename column name(s)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-metadata-for-later-filtering">
-   Add Metadata for later filtering
+  <a class="reference internal nav-link" href="#select-drop-column-s">
+   select/drop column(s)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#select-column-s-to-keep">
+     select column(s) to keep
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drop-column-s-by-index">
+     drop column(s) by index
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drop-column-s-by-name">
+     drop column(s) by name
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -385,6 +417,287 @@
   </tbody>
 </table>
 </div></div></div>
+</div>
+<div class="section" id="wide-to-long">
+<h2>wide to long<a class="headerlink" href="#wide-to-long" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfWide</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">dfWide</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>FlatA_Hum</th>
+      <th>FlatA_Temp</th>
+      <th>FlatB_Hum</th>
+      <th>FlatB_Temp</th>
+      <th>FlatC_Hum</th>
+      <th>FlatC_Temp</th>
+      <th>FlatD_Hum</th>
+      <th>FlatD_Temp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018-10-03 00:00:00</td>
+      <td>53.0</td>
+      <td>24.43</td>
+      <td>38.8</td>
+      <td>22.40</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.43</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2018-10-03 01:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>38.8</td>
+      <td>22.40</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.40</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018-10-03 02:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>39.3</td>
+      <td>22.40</td>
+      <td>44.7</td>
+      <td>24.5</td>
+      <td>48.3</td>
+      <td>24.38</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2018-10-03 03:00:00</td>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>40.3</td>
+      <td>22.40</td>
+      <td>45.0</td>
+      <td>24.5</td>
+      <td>48.0</td>
+      <td>24.33</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-10-03 04:00:00</td>
+      <td>53.3</td>
+      <td>24.40</td>
+      <td>41.0</td>
+      <td>22.37</td>
+      <td>45.2</td>
+      <td>24.5</td>
+      <td>47.7</td>
+      <td>24.30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfLong</span> <span class="o">=</span> <span class="n">dfWide</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">],</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;dataPoint&quot;</span><span class="p">)</span>
+<span class="n">dfLong</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>dataPoint</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018-10-03 00:00:00</td>
+      <td>FlatA_Hum</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2018-10-03 01:00:00</td>
+      <td>FlatA_Hum</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018-10-03 02:00:00</td>
+      <td>FlatA_Hum</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2018-10-03 03:00:00</td>
+      <td>FlatA_Hum</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-10-03 04:00:00</td>
+      <td>FlatA_Hum</td>
+      <td>53.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="long-to-wide">
+<h2>long to wide<a class="headerlink" href="#long-to-wide" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfWide</span> <span class="o">=</span> <span class="n">dfLong</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;dataPoint&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="n">dfWide</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataPoint</th>
+      <th>FlatA_Hum</th>
+      <th>FlatA_Temp</th>
+      <th>FlatB_Hum</th>
+      <th>FlatB_Temp</th>
+      <th>FlatC_Hum</th>
+      <th>FlatC_Temp</th>
+      <th>FlatD_Hum</th>
+      <th>FlatD_Temp</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-10-03 00:00:00</th>
+      <td>53.0</td>
+      <td>24.43</td>
+      <td>38.8</td>
+      <td>22.40</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.43</td>
+    </tr>
+    <tr>
+      <th>2018-10-03 01:00:00</th>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>38.8</td>
+      <td>22.40</td>
+      <td>44.0</td>
+      <td>24.5</td>
+      <td>49.0</td>
+      <td>24.40</td>
+    </tr>
+    <tr>
+      <th>2018-10-03 02:00:00</th>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>39.3</td>
+      <td>22.40</td>
+      <td>44.7</td>
+      <td>24.5</td>
+      <td>48.3</td>
+      <td>24.38</td>
+    </tr>
+    <tr>
+      <th>2018-10-03 03:00:00</th>
+      <td>53.0</td>
+      <td>24.40</td>
+      <td>40.3</td>
+      <td>22.40</td>
+      <td>45.0</td>
+      <td>24.5</td>
+      <td>48.0</td>
+      <td>24.33</td>
+    </tr>
+    <tr>
+      <th>2018-10-03 04:00:00</th>
+      <td>53.3</td>
+      <td>24.40</td>
+      <td>41.0</td>
+      <td>22.37</td>
+      <td>45.2</td>
+      <td>24.5</td>
+      <td>47.7</td>
+      <td>24.30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </div>
 <div class="section" id="access-data">
 <h2>Access Data<a class="headerlink" href="#access-data" title="Permalink to this headline">¶</a></h2>
@@ -513,8 +826,8 @@ Name: FlatA_Temp, Length: 17181, dtype: float64
 </div>
 </div>
 </div>
-<div class="section" id="get-and-change-column-names">
-<h2>get and change column names<a class="headerlink" href="#get-and-change-column-names" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rename-column-name-s">
+<h2>Rename column name(s)<a class="headerlink" href="#rename-column-name-s" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
@@ -529,9 +842,61 @@ Name: FlatA_Temp, Length: 17181, dtype: float64
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;FlatA_Temp&#39;</span><span class="p">:</span> <span class="s1">&#39;A_Temp&#39;</span><span class="p">,</span> <span class="s1">&#39;FlatA_Hum&#39;</span><span class="p">:</span> <span class="s1">&#39;A_Hum&#39;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
 </div>
-<div class="section" id="add-metadata-for-later-filtering">
-<h2>Add Metadata for later filtering<a class="headerlink" href="#add-metadata-for-later-filtering" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;time&#39;, &#39;A_Hum&#39;, &#39;A_Temp&#39;, &#39;FlatB_Hum&#39;, &#39;FlatB_Temp&#39;, &#39;FlatC_Hum&#39;,
+       &#39;FlatC_Temp&#39;, &#39;FlatD_Hum&#39;, &#39;FlatD_Temp&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="select-drop-column-s">
+<h2>select/drop column(s)<a class="headerlink" href="#select-drop-column-s" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="select-column-s-to-keep">
+<h3>select column(s) to keep<a class="headerlink" href="#select-column-s-to-keep" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;FlatA_Temp&#39;</span><span class="p">,</span><span class="s1">&#39;FlatB_Temp&#39;</span><span class="p">]]</span>
+<span class="c1">#df1.head()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="drop-column-s-by-index">
+<h3>drop column(s) by index<a class="headerlink" href="#drop-column-s-by-index" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#df2.head()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="drop-column-s-by-name">
+<h3>drop column(s) by name<a class="headerlink" href="#drop-column-s-by-name" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;FlatA_Hum&#39;</span><span class="p">,</span> <span class="s1">&#39;FlatB_Hum&#39;</span><span class="p">,</span> <span class="s1">&#39;FlatC_Hum&#39;</span><span class="p">,</span> <span class="s1">&#39;FlatD_Hum&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#df3.head()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -560,7 +925,7 @@ Name: FlatA_Temp, Length: 17181, dtype: float64
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="collectData.html" title="previous page">Collect Data</a>
+    <a class='left-prev' id="prev-link" href="addingMetadata.html" title="previous page">Add Metadata for later filtering</a>
     <a class='right-next' id="next-link" href="eda.html" title="next page">Explorative Data Analysis</a>
 
         </div>
