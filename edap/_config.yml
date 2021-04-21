@@ -8,7 +8,7 @@
 title                       : Energy Data Analysis with Python  # The title of the book. Will be placed in the left navbar.
 author                      : Reto Marek  # The author of the book
 copyright                   : "2021"  # Copyright year to be placed in the footer
-#logo                        : logo.png  # A path to the book logo
+logo                        : ""  # A path to the book logo
 
 #######################################################################################
 # Launch button settings
