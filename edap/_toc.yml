@@ -9,6 +9,7 @@
 - file: pythonBasics
   sections:
     - file: /partPythonBasics/collectData
+    - file: /partPythonBasics/addingMetadata
     - file: /partPythonBasics/dataWrangling
     - file: /partPythonBasics/eda
     - file: /partPythonBasics/timeSeries
