@@ -491,7 +491,7 @@
 <p>Increase the frequency of the samples, such as from hours to 15min</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df15min</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;15min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df15min</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;15min&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">)</span>
 <span class="n">df15min</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -600,8 +600,8 @@
 <p class="admonition-title">Note</p>
 <p>Other upsample methods are</p>
 <ul class="simple">
-<li><p>.interpolate(method=’linear’)</p></li>
-<li><p>.interpolate(method=’spline’, order=2) # gives more natural curve like data</p></li>
+<li><p>.interpolate(method=”linear”)</p></li>
+<li><p>.interpolate(method=”spline”, order=2) # gives more natural curve like data</p></li>
 <li><p>.bfill()[:15] # backwards fill</p></li>
 <li><p>.pad()[:15]  # forwards fill</p></li>
 </ul>
@@ -617,7 +617,7 @@
 <p>Decrease the frequency of the samples, such as from hours to days</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfDaily</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfDaily</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">dfDaily</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
