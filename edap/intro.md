@@ -1,5 +1,3 @@
-# Energy Data Analysis with Python
-
 ![cover](images/cover.jpg)
 
 ```{admonition} About this book

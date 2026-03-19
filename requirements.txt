@@ -14,6 +14,7 @@ kaleido
 
 # Energy data analysis
 pyedautils
+ephem
 # influxdb-toolkit  # not yet published on PyPI
 
 # Time series
