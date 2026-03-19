@@ -17,6 +17,7 @@ Covers general data analysis tasks: pandas fundamentals, data loading, datetime 
 ```{admonition} Part III — Data Visualizations
 :class: hint
 Brings the numbers to life. Visualization recipes for statistical plots, decompositions, seasonal patterns, heat maps, daily profiles, comfort diagrams, and more — using [Plotly](https://plotly.com/python/) for interactive plots and [pyedautils](https://pypi.org/project/pyedautils/) for energy-domain-specific visualizations.
+Each visualization recipe follows a consistent pattern: goal, data basis, data preparation, and visualization. Simply copy the code, run it, and replace the sample data with your own.
 ```
 
 ```{admonition} Part IV — Appendix
@@ -38,7 +39,8 @@ Excel users are pushing the program to its limits with ever-increasing data sets
 This book is intended to close that gap.
 
 ```{tip}
-Wondering why Python and not R? The author uses both! Check out the R version: [Engineering Data Analysis in R](https://hslu-ige-laes.github.io/edar/)
+Wondering why Python and not R? I use both! Check out the R version: [Engineering Data Analysis in R](https://hslu-ige-laes.github.io/edar/).
+But to be honest, Python is a lot more widespread in the industry...
 ```
 
 ## Acknowledgements
