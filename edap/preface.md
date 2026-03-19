@@ -2,21 +2,26 @@
 
 ## Book Structure
 
-The book is organized in three main parts:
+The book is organized in four main parts:
 
 ```{admonition} Part I — Getting Started
 :class: hint
-Setup your Python environment and get ready for data analysis.
+Set up your Python environment, learn about Jupyter Notebooks, and install the required packages including [pyedautils](https://pypi.org/project/pyedautils/) and [influxdb-toolkit](https://pypi.org/project/influxdb-toolkit/).
 ```
 
 ```{admonition} Part II — Python Basics
 :class: hint
-Covers general data analysis tasks: data loading, wrangling, aggregation, and exploratory analysis. This part deals with the number crunching and table work.
+Covers general data analysis tasks: pandas fundamentals, data loading, datetime handling, wrangling, time series operations, exploratory analysis, data quality assessment, and database connectivity with InfluxDB.
 ```
 
 ```{admonition} Part III — Data Visualizations
 :class: hint
-Brings the numbers to life. Visualizations to identify patterns, changes over time, unusual readings, and relationships between variables.
+Brings the numbers to life. Visualization recipes for statistical plots, decompositions, seasonal patterns, heat maps, daily profiles, comfort diagrams, and more — using [Plotly](https://plotly.com/python/) for interactive plots and [pyedautils](https://pypi.org/project/pyedautils/) for energy-domain-specific visualizations.
+```
+
+```{admonition} Part IV — Appendix
+:class: hint
+Overview of Python packages used in this book and links to additional resources.
 ```
 
 > *"Numerical quantities focus on expected values, graphical summaries on unexpected values."*

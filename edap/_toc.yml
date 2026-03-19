@@ -11,19 +11,69 @@ parts:
       - file: gettingStarted
         sections:
           - file: partGettingStarted/installPython
+          - file: partGettingStarted/jupyterNotebooks
+          - file: partGettingStarted/packages
 
   - caption: Python Basics
     chapters:
       - file: pythonBasics
         sections:
-          - file: partPythonBasics/collectData
-          - file: partPythonBasics/addingMetadata
+          - file: partPythonBasics/pandasIntro
+          - file: partPythonBasics/loadingData
+          - file: partPythonBasics/datetimeHandling
           - file: partPythonBasics/dataWrangling
-          - file: partPythonBasics/eda
           - file: partPythonBasics/timeSeries
+          - file: partPythonBasics/eda
+          - file: partPythonBasics/dataQuality
+          - file: partPythonBasics/influxdb
 
   - caption: Data Visualizations
     chapters:
       - file: dataVis
         sections:
-          - file: partDataVis/vis1
+          - file: partDataVis/statistical
+            sections:
+              - file: partDataVis/statisticalBoxplot
+              - file: partDataVis/statisticalDensity
+              - file: partDataVis/statisticalDensitySeasons
+              - file: partDataVis/statisticalCrossCorrelation
+          - file: partDataVis/decomposition
+            sections:
+              - file: partDataVis/decompositionLong
+              - file: partDataVis/decompositionShort
+          - file: partDataVis/seasonal
+            sections:
+              - file: partDataVis/seasonalOverlapping
+              - file: partDataVis/seasonalMiniplots
+              - file: partDataVis/seasonalPolar
+              - file: partDataVis/seasonalBeforeAfter
+          - file: partDataVis/heatmaps
+            sections:
+              - file: partDataVis/heatmapCalendar
+              - file: partDataVis/heatmapMedianWeeks
+          - file: partDataVis/dailyProfiles
+            sections:
+              - file: partDataVis/dailyProfilesOverview
+              - file: partDataVis/dailyProfilesOverlayed
+              - file: partDataVis/dailyProfilesMean
+              - file: partDataVis/dailyProfilesDecomposed
+          - file: partDataVis/sumFrequency
+            sections:
+              - file: partDataVis/sumFrequencyDays
+              - file: partDataVis/sumFrequencyHours
+          - file: partDataVis/comfort
+            sections:
+              - file: partDataVis/comfortTempHumidity
+              - file: partDataVis/comfortMollierHx
+              - file: partDataVis/comfortSia180
+          - file: partDataVis/misc
+            sections:
+              - file: partDataVis/miscEnergySignature
+              - file: partDataVis/miscEnergySignaturePes
+              - file: partDataVis/miscElectricityHousehold
+              - file: partDataVis/miscPlotlyMultipleYAxis
+
+  - caption: Appendix
+    chapters:
+      - file: appendix/packages
+      - file: appendix/resources

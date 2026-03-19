@@ -7,3 +7,17 @@ sphinx-copybutton
 numpy
 pandas
 matplotlib
+
+# Interactive visualizations
+plotly
+kaleido
+
+# Energy data analysis
+pyedautils
+influxdb-toolkit
+
+# Time series
+statsmodels
+
+# Notebook support
+ipywidgets
