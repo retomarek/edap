@@ -1,18 +1,29 @@
-# Table of content
-# Learn more at https://jupyterbook.org/customize/toc.html
-#
-- file: intro
-- file: preface
-- file: gettingStarted
-  sections:
-    - file: /partGettingStarted/installPython
-- file: pythonBasics
-  sections:
-    - file: /partPythonBasics/collectData
-    - file: /partPythonBasics/addingMetadata
-    - file: /partPythonBasics/dataWrangling
-    - file: /partPythonBasics/eda
-    - file: /partPythonBasics/timeSeries
-- file: dataVis
-  sections:
-    - file: /partDataVis/vis1
+format: jb-book
+root: intro
+
+parts:
+  - caption: Preface
+    chapters:
+      - file: preface
+
+  - caption: Getting Started
+    chapters:
+      - file: gettingStarted
+        sections:
+          - file: partGettingStarted/installPython
+
+  - caption: Python Basics
+    chapters:
+      - file: pythonBasics
+        sections:
+          - file: partPythonBasics/collectData
+          - file: partPythonBasics/addingMetadata
+          - file: partPythonBasics/dataWrangling
+          - file: partPythonBasics/eda
+          - file: partPythonBasics/timeSeries
+
+  - caption: Data Visualizations
+    chapters:
+      - file: dataVis
+        sections:
+          - file: partDataVis/vis1

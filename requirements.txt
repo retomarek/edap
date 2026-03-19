@@ -1,5 +1,9 @@
-jupyter-book
-matplotlib
+# Jupyter Book build
+jupyter-book<2
+sphinx-togglebutton
+sphinx-copybutton
+
+# Data analysis
 numpy
-ghp-import
 pandas
+matplotlib

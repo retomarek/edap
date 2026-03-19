@@ -1,35 +1,48 @@
-# edap
+# Energy Data Analysis with Python (EDAP)
 
-> **See [https://retomarek.github.io/edap/](https://retomarek.github.io/edap/)**
-> 
-## Usage
+[![Deploy Book](https://github.com/retomarek/edap/actions/workflows/deploy.yml/badge.svg)](https://github.com/retomarek/edap/actions/workflows/deploy.yml)
+[![Jupyter Book](https://img.shields.io/badge/Jupyter%20Book-v1-orange?logo=jupyter)](https://jupyterbook.org)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-### Building the book
+An interactive online book for analyzing and visualizing energy and comfort time series data with Python.
 
-If you'd like to develop on and build the edap book, you should:
+**Read the book: [retomarek.github.io/edap](https://retomarek.github.io/edap/)**
 
-- Clone this repository and run
-- Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
-- (Recommended) Remove the existing `edap/_build/` directory
-- Run `jupyter-book build edap/`
+## Contents
 
-A fully-rendered HTML version of the book will be built in `edap/_build/html/`.
+- **Getting Started** - Python installation and environment setup
+- **Python Basics** - Data loading, metadata, wrangling, EDA, and time series analysis
+- **Data Visualizations** - Recipes for common energy and comfort plots
 
-### Hosting the book
+## Local Development
 
-The html version of the book is hosted on the `gh-pages` branch of this repo. A GitHub actions workflow has been created that automatically builds and pushes the book to this branch on a push or pull request to main.
+```bash
+# Clone the repository
+git clone https://github.com/retomarek/edap.git
+cd edap
 
-If you wish to disable this automation, you may remove the GitHub actions workflow and build the book manually by:
+# Create a virtual environment (recommended)
+python -m venv .venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
-- Navigating to your local build; and running,
-- `ghp-import -n -p -f edap/_build/html`
+# Install dependencies
+pip install -r requirements.txt
 
-This will automatically push your build to the `gh-pages` branch. More information on this hosting process can be found [here](https://jupyterbook.org/publish/gh-pages.html#manually-host-your-book-with-github-pages).
+# Build the book
+jupyter-book build edap/
 
-## Contributors
+# Open in browser
+open edap/_build/html/index.html
+```
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/retomarek/edap/graphs/contributors).
+## Deployment
+
+The book is automatically built and deployed to GitHub Pages via GitHub Actions on every push to `main`. See the [workflow](.github/workflows/deploy.yml) for details.
+
+## License
+
+This project is licensed under the [GNU General Public License v3](LICENSE).
 
 ## Credits
 
-This project is created using the excellent open source [Jupyter Book project](https://jupyterbook.org/) and the [executablebooks/cookiecutter-jupyter-book template](https://github.com/executablebooks/cookiecutter-jupyter-book).
+Built with [Jupyter Book](https://jupyterbook.org/).

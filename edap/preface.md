@@ -1,30 +1,43 @@
 # Preface
-The book is structured in the following main parts:
 
-1. Getting Started
-1. Python Basics
-1. Data Visualizations
+## Book Structure
 
-The part "Python Basics" covers general data analysis tasks like data loading, wrangling and aggregation. Mostly this part deals with number juggling and table viewing.
+The book is organized in three main parts:
 
-> "Numerical quantities focus on expected values, graphical summaries on unexpected values." - John W. Tukey
+```{admonition} Part I — Getting Started
+:class: hint
+Setup your Python environment and get ready for data analysis.
+```
 
-Such so called "graphical summaries" are covered in the part "Data Visualizations" which brings the calculated numbers to life. Visualizations are good to identify patterns, changes over time, unusual readings, and relationships between variables. The presented code makes the creation of common and useful plots for energy and comfort data fast and easy.
-The recipes in this part will show you how to complete certain specific tasks. Examples are shown so that you can understand the basic principle and reproduce the analysis or visualization with your own data. Simply copy the code into your R-script, run it and if you like the visualization replace the sample data with your own.
+```{admonition} Part II — Python Basics
+:class: hint
+Covers general data analysis tasks: data loading, wrangling, aggregation, and exploratory analysis. This part deals with the number crunching and table work.
+```
+
+```{admonition} Part III — Data Visualizations
+:class: hint
+Brings the numbers to life. Visualizations to identify patterns, changes over time, unusual readings, and relationships between variables.
+```
+
+> *"Numerical quantities focus on expected values, graphical summaries on unexpected values."*
+> — John W. Tukey
+
+The recipes show complete workflows from raw data files to final visualizations. Simply copy the code, run it, and replace the sample data with your own.
 
 ## Why Python?
-In the [EVISU](https://github.com/hslu-ige-laes/evisu)study of the Lucerne University of Applied Sciences and Arts, experts from the field were asked how and where they perform energy analyses and create visualizations. The result was that many people today either need Excel or use a building monitoring software to execute analysis and as well for making visualizations.
 
-Excel users are pushing the program to its limits with the ever-increasing data sets. Also the interactive ability of the graphics there is limited. Switching to an analysis environment like "R" seems unavoidable for more complex tasks, but apparently causes problems for many people. In the market there are numerous books which make the start in "R" easier. There are also packages for various fields which support the discipline-specific analysis and visualization tasks.
+In the [EVISU](https://github.com/hslu-ige-laes/evisu) study of the Lucerne University of Applied Sciences and Arts, experts from the field were asked how and where they perform energy analyses. The result: many rely on Excel or building monitoring software.
 
-However, experts from the energy and building services engineering industry lack a corresponding work and corresponding packages. The present book is intended to close this gap.
+Excel users are pushing the program to its limits with ever-increasing data sets. Switching to an analysis environment like Python or R seems unavoidable for more complex tasks. However, domain-specific resources have been lacking for the energy and building services engineering industry.
 
-You might also wonder why Python and not R. Well, this is a question of faith and the author uses both: [https://hslu-ige-laes.github.io/edar/](https://hslu-ige-laes.github.io/edar/)
+This book is intended to close that gap.
 
-## Further Reading
-tbd
+```{tip}
+Wondering why Python and not R? The author uses both! Check out the R version: [Engineering Data Analysis in R](https://hslu-ige-laes.github.io/edar/)
+```
 
 ## Acknowledgements
-This book was developed using [Jupyter Book](https://bookdown.org), an open source project for building beautiful, publication-quality books and documents from computational material. The book is built  using code that combines Python code, Jupyter Notebooks, data, and text to create a book for which python code and examples can be re-executed every time the book is re-built.
 
-The online book is hosted using GitHub's free [GitHub Pages](https://pages.github.com). All material for this book is available and can be explored at the book's [GitHub repository](https://github.com/hslu-ige-laes/edar).
+This book was developed using [Jupyter Book](https://jupyterbook.org), an open-source project for building publication-quality books from computational material. The book combines Python code, Jupyter Notebooks, data, and text — all examples are re-executed every time the book is rebuilt.
+
+Hosted on [GitHub Pages](https://pages.github.com). Source available on [GitHub](https://github.com/retomarek/edap).
