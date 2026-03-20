@@ -21,6 +21,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PLOTLY_RENDERER: notebook
     steps:
       - uses: actions/checkout@v4
 

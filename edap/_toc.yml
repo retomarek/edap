@@ -19,6 +19,7 @@ chapters:
       - file: partPythonBasics/eda
       - file: partPythonBasics/dataQuality
       - file: partPythonBasics/influxdb
+      - file: partPythonBasics/meteoData
 
   - file: dataVis
     sections:
