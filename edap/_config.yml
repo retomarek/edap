@@ -63,6 +63,7 @@ sphinx:
   extra_extensions:
     - sphinx_togglebutton
     - sphinx_copybutton
+    - sphinx_design
   config:
     togglebutton_hint: "Show"
     togglebutton_hint_hide: "Hide"
