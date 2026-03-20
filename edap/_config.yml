@@ -60,6 +60,7 @@ repository:
 #######################################################################################
 # Sphinx settings
 sphinx:
+  recursive_update: true
   extra_extensions:
     - sphinx_togglebutton
     - sphinx_copybutton
