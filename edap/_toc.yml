@@ -28,6 +28,9 @@ chapters:
           - file: partDataVis/statisticalBoxplot
           - file: partDataVis/statisticalDensity
           - file: partDataVis/statisticalDensitySeasons
+          - file: partDataVis/statisticalCorrelation
+          - file: partDataVis/statisticalOutliers
+          - file: partDataVis/statisticalAutocorrelation
           - file: partDataVis/statisticalCrossCorrelation
       - file: partDataVis/decomposition
         sections:
