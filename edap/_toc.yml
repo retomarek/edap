@@ -6,7 +6,6 @@ chapters:
 
   - file: gettingStarted
     sections:
-      - file: partGettingStarted/installPython
       - file: partGettingStarted/jupyterNotebooks
       - file: partGettingStarted/packages
 
@@ -65,5 +64,8 @@ chapters:
           - file: partDataVis/miscElectricityHousehold
           - file: partDataVis/miscPlotlyMultipleYAxis
 
-  - file: appendix/packages
-  - file: appendix/resources
+  - file: appendix
+    sections:
+      - file: appendix/packages
+      - file: appendix/resources
+      - file: appendix/installPython

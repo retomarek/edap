@@ -9,23 +9,26 @@ Each notebook consists of **cells**:
 - **Code cells** — contain Python code that can be executed
 - **Markdown cells** — contain formatted text, headings, lists, images, and equations
 
-## Getting Started
+## Using Google Colab
 
-### In VS Code
+[Google Colab](https://colab.research.google.com/) is a free, cloud-based Jupyter environment — no local installation required.
 
-1. Open a `.ipynb` file or create a new one via `Ctrl+Shift+P` → "Create: New Jupyter Notebook"
-2. Select a Python kernel (interpreter) from the top-right dropdown
-3. Run cells with `Shift+Enter`
+**Opening notebooks from this book in Colab:**
 
-### In JupyterLab
+The notebooks in this book that are based on `.ipynb` files can be opened directly in Google Colab. On those pages, a rocket icon ({fa}`rocket`) appears in the top toolbar — click it and select **Colab** to open the notebook there.
 
-1. Install JupyterLab: `pip install jupyterlab`
-2. Start it: `jupyter lab`
-3. Create a new notebook from the launcher
+```{admonition} Note
+:class: warning
+The launch button only appears on pages that are based on `.ipynb` notebook files, not on regular text pages like this one. Try it on one of the notebook pages, e.g. in the [Python Basics](../partPythonBasics/pandasIntro) section.
+```
 
-### In Google Colab
+```{tip}
+**Try Jupyter without installing anything!** You can explore Jupyter Notebooks directly in your browser using the official Jupyter demo:
 
-All notebooks in this book can be opened directly in [Google Colab](https://colab.research.google.com/) using the launch button at the top of each page — no local installation required.
+[jupyter.org/try-jupyter — Interactive Intro Notebook](https://jupyter.org/try-jupyter/notebooks/?path=notebooks/Intro.ipynb)
+
+This opens a fully functional JupyterLab environment with an introductory notebook — perfect for a first look at how notebooks work before setting up a local environment.
+```
 
 ## Useful Shortcuts
 
@@ -47,5 +50,5 @@ This book uses special cell tags to control display:
 - `output_scroll` — makes long outputs scrollable
 
 ```{tip}
-In VS Code, you can add cell tags by clicking the gear icon in the cell toolbar.
+For local Jupyter Notebook usage in VS Code, PyCharm, Spyder, or JupyterLab, see the [Python Installation & IDE Setup](../appendix/installPython) appendix.
 ```

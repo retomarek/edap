@@ -1,4 +1,4 @@
-# Python Basics
+# Part II — Python Basics
 
 The following chapters give an overview of the basic principles needed to understand the recipes in the "Data Visualizations" part. The focus is on practical examples of how data can be loaded, transformed, and analyzed using Python and pandas.
 

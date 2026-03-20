@@ -1,12 +1,12 @@
-# Getting Started
+# Part I — Getting Started
 
-This part helps you set up everything you need to follow the examples in this book.
+The fastest way to use this book is with [Google Colab](https://colab.research.google.com/) — a free, cloud-based Jupyter environment that requires no installation.
 
 ```{admonition} What you will learn
 :class: tip
-- How to install Python and choose an IDE
-- How to work with Jupyter Notebooks
+- How to open and run notebooks from this book in Google Colab
+- What Jupyter Notebooks are and how they work
 - How to install and manage Python packages
 ```
 
-If you already have a Python environment set up, you can skip ahead to the [Python Basics](pythonBasics) chapter.
+If you prefer to work locally, see the [Python Installation & IDE Setup](appendix/installPython) appendix.

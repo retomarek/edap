@@ -1,0 +1,4 @@
+/* Table row hover color: orange instead of purple */
+.bd-content table tbody tr:hover {
+    background-color: #fff3e0 !important;
+}

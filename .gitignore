@@ -1,5 +1,6 @@
 # Jupyter Book build output
 edap/_build/
+edap/conf.py
 
 # Jupyter
 .ipynb_checkpoints/

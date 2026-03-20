@@ -29,10 +29,39 @@ source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 pip install -r requirements.txt
 
 # Build the book
-jupyter-book build edap/
+jupyter-book build edap
+```
 
-# Open in browser
+After the build completes, open the book in your browser:
+
+```bash
+# macOS / Linux
 open edap/_build/html/index.html
+
+# Windows (Command Prompt)
+start edap\_build\html\index.html
+
+# Windows (PowerShell)
+Invoke-Item edap\_build\html\index.html
+
+# Or paste this path directly into your browser
+# file:///path/to/edap/edap/_build/html/index.html
+```
+
+### Build Scripts (Windows)
+
+- **`build.bat`** — Builds the book (fast, uses cache). Then open `edap/_build/html/index.html` in the browser and refresh with F5.
+- **`build-clean.bat`** — Cleans the cache and rebuilds everything (use after config or logo changes, takes a few minutes).
+
+### Rebuild After Changes
+
+Run `jupyter-book build edap` (or double-click `build.bat`) after making changes, then refresh the browser with F5. Jupyter Book caches executed notebooks, so only changed pages are re-built.
+
+To force a clean rebuild (re-executes all notebooks):
+
+```bash
+jupyter-book clean edap
+jupyter-book build edap
 ```
 
 ## Deployment
