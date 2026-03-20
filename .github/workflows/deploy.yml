@@ -37,13 +37,16 @@ jobs:
           pip install playwright
           playwright install chromium
 
-      - name: Build Jupyter Book (HTML)
-        run: jupyter-book build edap/
-
       - name: Build Jupyter Book (PDF)
         run: |
           jupyter-book build edap/ --builder pdfhtml
-          cp edap/_build/pdf/book.pdf edap/_build/html/edap.pdf
+          mkdir -p edap/_build/pdf_tmp
+          cp edap/_build/pdf/book.pdf edap/_build/pdf_tmp/edap.pdf
+
+      - name: Build Jupyter Book (HTML)
+        run: |
+          jupyter-book build edap/
+          cp edap/_build/pdf_tmp/edap.pdf edap/_build/html/edap.pdf
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
