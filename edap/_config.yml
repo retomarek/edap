@@ -38,10 +38,7 @@ html:
   use_issues_button: true
   use_multitoc_numbering: true
   home_page_in_navbar: true
-  extra_footer: |
-    <p>
-      <a href="edap.pdf">📥 Download as PDF</a> · Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-    </p>
+  extra_footer: ""
 
 #######################################################################################
 # Launch button settings
