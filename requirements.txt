@@ -15,7 +15,7 @@ kaleido
 # Energy data analysis
 pyedautils>=0.0.22
 ephem
-# influxdb-toolkit  # not yet published on PyPI
+influxdb-toolkit>=0.1.0
 
 # Time series
 statsmodels
