@@ -59,8 +59,11 @@ chapters:
           - file: partDataVis/sumFrequencyHours
       - file: partDataVis/comfort
         sections:
+          - file: partDataVis/comfortTempHumidityTimeseries
           - file: partDataVis/comfortTempHumidity
           - file: partDataVis/comfortMollierHx
+          - file: partDataVis/comfortDonut
+          - file: partDataVis/comfortCompass
           - file: partDataVis/comfortSia180
       - file: partDataVis/misc
         sections:

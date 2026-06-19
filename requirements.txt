@@ -13,7 +13,7 @@ plotly
 kaleido
 
 # Energy data analysis
-pyedautils
+pyedautils>=0.0.22
 ephem
 # influxdb-toolkit  # not yet published on PyPI
 
