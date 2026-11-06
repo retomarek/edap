@@ -1,3 +1,5 @@
+# Energy Data Analysis with Python
+
 ![cover](images/cover.jpg)
 
 ```{admonition} About this book
@@ -12,6 +14,6 @@ This book is also available as a PDF for offline reading: [Download PDF](https:/
 - How to use **pandas** to load, transform, and analyze time series data
 - How to handle **datetime objects** and time zones correctly
 - How to perform **exploratory data analysis** (EDA) on building data
-- How to assess **data quality** — detect gaps, outliers, and sensor failures
-- How to create **meaningful visualizations** using [pyedautils](https://pypi.org/project/pyedautils/)
-- How to connect to **InfluxDB** time series databases using [influxdb-toolkit](https://pypi.org/project/influxdb-toolkit/)
+- How to assess **data quality** — detect gaps, duplicates, and implausible values
+- How to create **meaningful visualizations** of energy data using [pyedautils](https://retomarek.github.io/pyedautils/)
+- How to judge **indoor comfort** with temperature and humidity, including the Mollier h-x diagram

@@ -5,7 +5,7 @@ sphinx-copybutton
 
 # Data analysis
 numpy
-pandas
+pandas>=2.2
 matplotlib
 
 # Interactive visualizations
@@ -13,11 +13,6 @@ plotly
 
 # Energy data analysis
 pyedautils>=0.0.32
-ephem
-influxdb-toolkit>=0.1.0
-
-# Time series
-statsmodels
 
 # Notebook support
 ipywidgets
