@@ -38,7 +38,7 @@ This Code of Conduct applies within all community spaces, and also applies when 
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the maintainer, [@retomarek](https://github.com/retomarek), who is responsible for enforcement:
 
-* **Privately:** use the "Report content" menu on the comment, issue, pull request or discussion and choose "Report to repository admins". To report a user or a serious incident to GitHub itself, see [Reporting abuse or spam](https://docs.github.com/en/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam).
+* **Serious or sensitive incidents:** report the content or the user to GitHub with "Report content" or "Report abuse", see [Reporting abuse or spam](https://docs.github.com/en/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam). Such reports go to GitHub, not to the maintainer.
 * **If it is not sensitive:** open a [discussion](https://github.com/retomarek/edap/discussions).
 
 All complaints will be reviewed and investigated promptly and fairly.
