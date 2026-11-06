@@ -48,6 +48,9 @@ jobs:
           pip install playwright
           playwright install chromium
 
+      # Notebooks are executed once: the first build stores the outputs in
+      # edap/_build/.jupyter_cache (execute_notebooks: cache), the second reuses them.
+      # The runner starts empty, so every run executes against the live data sources.
       - name: Build Jupyter Book (PDF)
         if: env.DEPLOY == 'true'
         run: |
