@@ -19,7 +19,7 @@ Needs network access (plotly.js, D3 and the Lexend font come from CDNs). Run
 from the repository root with uv (no Node needed):
 
     uv run --no-project --with playwright python -m playwright install chromium   # once
-    uv run --no-project --with playwright --with "pyedautils>=0.0.32" python scripts/render_branding.py
+    uv run --no-project --with playwright --with "pyedautils>=0.0.33" python scripts/render_branding.py
 """
 
 import tempfile
@@ -29,7 +29,6 @@ from pathlib import Path
 import pandas as pd
 from playwright.sync_api import sync_playwright
 
-from pyedautils._mollier import pressure_from_altitude
 from pyedautils.comfort import comfort_compass_distribution
 from pyedautils.plots import plot_comfort_compass, plot_mollier_hx
 
@@ -51,7 +50,7 @@ def plot_pages():
     # their default offsets and the outside air on a cold, damp spring night.
     zone = {"temperature": (8, 18), "rel_humidity": (0.40, 0.70), "abs_humidity": None}
     mollier = plot_mollier_hx(data=room, outdoor=(2, 85),
-                              altitude=450, pressure=pressure_from_altitude(450),
+                              altitude=450,
                               domain_x=(0.0, 0.016), domain_y=(-5.0, 32.0),
                               comfort_zone=zone, comfort_zone_orange=True, comfort_zone_red=True,
                               height=560)

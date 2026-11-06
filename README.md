@@ -121,7 +121,7 @@ Corrections, new recipes and better explanations are welcome. See [CONTRIBUTING.
 
 ```bash
 uv run --no-project --with playwright python -m playwright install chromium   # once
-uv run --no-project --with playwright --with "pyedautils>=0.0.32" python scripts/render_branding.py
+uv run --no-project --with playwright --with "pyedautils>=0.0.33" python scripts/render_branding.py
 ```
 
 The social preview has to be uploaded manually under *Settings → General → Social preview* (there is no API for it).

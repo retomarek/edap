@@ -37,5 +37,5 @@ body:
     attributes:
       label: Environment
       description: Python version, OS and the versions of the relevant packages (pip show pyedautils pandas plotly), or the browser for display problems.
-      placeholder: Python 3.12 on Windows 11, pyedautils 0.0.32, pandas 2.3, plotly 6.3
+      placeholder: Python 3.12 on Windows 11, pyedautils 0.0.33, pandas 2.3, plotly 6.3
       render: text
