@@ -46,12 +46,14 @@ def plot_pages():
     """HTML pages of the example plots, as (name, html, viewport width, height)."""
     room = pd.read_csv(DATA / "room_climate_sample.csv", parse_dates=["timestamp"])
 
-    # As in the book (comfortMollierHx): room data at 450 m a.s.l., outside air on
-    # a cold, damp spring night and the warning bands with their default offsets.
+    # As in the book (comfortMollierHx): room data at 450 m a.s.l. with the room's target
+    # band (8-18 °C, 40-70 %, the same band as the compass below), the warning bands with
+    # their default offsets and the outside air on a cold, damp spring night.
+    zone = {"temperature": (8, 18), "rel_humidity": (0.40, 0.70), "abs_humidity": None}
     mollier = plot_mollier_hx(data=room, outdoor=(2, 85),
                               altitude=450, pressure=pressure_from_altitude(450),
                               domain_x=(0.0, 0.016), domain_y=(-5.0, 32.0),
-                              comfort_zone_orange=True, comfort_zone_red=True,
+                              comfort_zone=zone, comfort_zone_orange=True, comfort_zone_red=True,
                               height=560)
 
     # As in the book (comfortCompass): the room's own target band.
