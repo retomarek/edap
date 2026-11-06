@@ -1,0 +1,22 @@
+name: Topic or chapter suggestion
+description: Suggest a new topic, chapter, plot recipe or an improvement to an existing page.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: topic
+    attributes:
+      label: What would you like to see in the book?
+      description: The analysis or plot, the question it answers and the data it needs (e.g. smart meter data, room sensors, weather data).
+    validations:
+      required: true
+  - type: input
+    id: chapter
+    attributes:
+      label: Where would it fit?
+      description: An existing part or chapter, or a new one.
+      placeholder: Data Visualizations > Comfort Diagrams
+  - type: textarea
+    id: references
+    attributes:
+      label: References (optional)
+      description: A standard or paper (e.g. SIA, ASHRAE), a tutorial, a dataset or an example from another tool.
