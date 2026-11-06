@@ -15,13 +15,13 @@ This page provides an overview of the main Python packages used throughout this 
 |---|---|---|
 | [plotly](https://pypi.org/project/plotly/) | Interactive visualizations with zoom, hover, and export | [plotly.com/python](https://plotly.com/python/) |
 | [matplotlib](https://pypi.org/project/matplotlib/) | Static 2D plotting (used as fallback) | [matplotlib.org](https://matplotlib.org/stable/contents.html) |
-| [kaleido](https://pypi.org/project/kaleido/) | Static image export for Plotly (PNG, SVG, PDF) | [GitHub](https://github.com/plotly/Kaleido) |
+| [kaleido](https://pypi.org/project/kaleido/) | Static image export for Plotly (PNG, SVG, PDF); optional, kaleido 1.x needs plotly 6.1.1 or newer | [GitHub](https://github.com/plotly/Kaleido) |
 
 ## Energy Data Analysis
 
 | Package | Description | Documentation |
 |---|---|---|
-| [pyedautils](https://pypi.org/project/pyedautils/) | Ready-to-use visualization functions for energy and comfort data | [PyPI](https://pypi.org/project/pyedautils/) |
+| [pyedautils](https://pypi.org/project/pyedautils/) | Ready-to-use analysis and visualization functions for energy and comfort data, used throughout this book | [retomarek.github.io/pyedautils](https://retomarek.github.io/pyedautils/) (API, examples, guides) |
 | [influxdb-toolkit](https://pypi.org/project/influxdb-toolkit/) | Connect to InfluxDB v1 and v2 time series databases | [PyPI](https://pypi.org/project/influxdb-toolkit/) |
 
 ## Time Series & Statistics

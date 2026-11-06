@@ -77,10 +77,10 @@ If a package is not available via `conda` (e.g. `pyedautils`), install it with `
 | [numpy](https://numpy.org/) | Numerical computing |
 | [plotly](https://plotly.com/python/) | Interactive visualizations |
 | [matplotlib](https://matplotlib.org/) | Static visualizations |
-| [pyedautils](https://pypi.org/project/pyedautils/) | Energy data analysis utilities — ready-to-use visualization functions |
+| [pyedautils](https://retomarek.github.io/pyedautils/) | Energy data analysis utilities — ready-to-use analysis and visualization functions |
 | [influxdb-toolkit](https://pypi.org/project/influxdb-toolkit/) | Connect to InfluxDB v1/v2 time series databases |
 | [statsmodels](https://www.statsmodels.org/) | Time series decomposition and statistics |
-| [kaleido](https://github.com/plotly/Kaleido) | Static image export for Plotly |
+| [kaleido](https://github.com/plotly/Kaleido) | Static image export for Plotly (optional, not needed for this book; kaleido 1.x needs plotly 6.1.1 or newer) |
 
 ## Updating Packages
 

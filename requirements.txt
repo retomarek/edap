@@ -10,10 +10,9 @@ matplotlib
 
 # Interactive visualizations
 plotly
-kaleido
 
 # Energy data analysis
-pyedautils>=0.0.22
+pyedautils>=0.0.32
 ephem
 influxdb-toolkit>=0.1.0
 
