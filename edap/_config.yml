@@ -10,7 +10,9 @@ logo: logo.png
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks: "auto"
+  # "cache": executed outputs are stored in _build/.jupyter_cache and reused by
+  # later builds (e.g. the HTML build after the PDF build) until a notebook changes
+  execute_notebooks: "cache"
   timeout: 180
   allow_errors: false
 
