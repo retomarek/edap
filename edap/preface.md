@@ -40,3 +40,7 @@ This book is inspired by the [R Graphics Cookbook](https://r-graphics.org/) and 
 It was developed using [Jupyter Book](https://jupyterbook.org), an open-source project for building publication-quality books from computational material. The book combines Python code, Jupyter Notebooks, data, and text — all examples are re-executed every time the book is rebuilt.
 
 Hosted on [GitHub Pages](https://pages.github.com). Source available on [GitHub](https://github.com/retomarek/edap).
+
+## License
+
+The code in this book is licensed under the [MIT License](https://github.com/retomarek/edap/blob/main/LICENSE), the text and images under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Sample data and some images come from third parties, see [data sources and credits](https://github.com/retomarek/edap#data-sources-and-credits).

@@ -4,7 +4,7 @@
 
 title: Energy Data Analysis with Python
 author: Reto Marek
-copyright: "2026"
+copyright: "2021-2026"
 logo: logo.png
 
 #######################################################################################
@@ -37,7 +37,8 @@ html:
   use_repository_button: true
   use_issues_button: true
   home_page_in_navbar: true
-  extra_footer: ""
+  extra_footer: |
+    <p>Code: <a href="https://github.com/retomarek/edap/blob/main/LICENSE">MIT License</a>. Text and images: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, except third-party data and images (see <a href="https://github.com/retomarek/edap#data-sources-and-credits">data sources and credits</a>).</p>
 
 #######################################################################################
 # Launch button settings
