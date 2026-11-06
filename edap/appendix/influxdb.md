@@ -8,13 +8,15 @@ To load data from InfluxDB 1 or 2 into pandas, the package [influxdb-toolkit](ht
 from datetime import datetime, timedelta, timezone
 from influxdb_toolkit import InfluxDBClientFactory
 
-config = {"url": "http://localhost:8086", "token": "my-token", "org": "my-org", "bucket": "my-bucket"}
+config = {"url": "http://localhost:8086", "token": "my-token",
+          "org": "my-org", "bucket": "my-bucket"}
+now = datetime.now(timezone.utc)
 
 with InfluxDBClientFactory.get_client(version=2, config=config) as client:
     df = client.get_timeseries(
         measurement="temperature", fields=["value"],
-        start=datetime.now(timezone.utc) - timedelta(days=30), end=datetime.now(timezone.utc),
-        interval="1h", aggregation="mean",          # downsampled on the server
+        start=now - timedelta(days=30), end=now,
+        interval="1h", aggregation="mean",   # downsampled on the server
     )
 ```
 
