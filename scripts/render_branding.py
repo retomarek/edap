@@ -38,7 +38,7 @@ DOCS = ROOT / "docs"
 LOGO = ROOT / "edap" / "images" / "logo_big.png"
 DATA = resources.files("pyedautils") / "data"
 
-# Cup in logo_big.png (1536x1024): centre and outer rim radius in pixels.
+# Cup in logo_big.png (1536x1024): center and outer rim radius in pixels.
 CUP_X, CUP_Y, CUP_R = 345, 450, 182
 
 
