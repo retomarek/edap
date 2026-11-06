@@ -43,4 +43,4 @@ Hosted on [GitHub Pages](https://pages.github.com). Source available on [GitHub]
 
 ## License
 
-The code in this book is licensed under the [MIT License](https://github.com/retomarek/edap/blob/main/LICENSE), the text and images under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Sample data and some images come from third parties, see [data sources and credits](https://github.com/retomarek/edap#data-sources-and-credits).
+The code in this book is licensed under the [MIT License](https://github.com/retomarek/edap/blob/main/LICENSE), the text and images under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Some sample data comes from third parties, see [data sources and credits](https://github.com/retomarek/edap#data-sources-and-credits).

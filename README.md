@@ -128,14 +128,14 @@ The social preview has to be uploaded manually under *Settings → General → S
 
 ## License
 
-© 2021-2026 Reto Marek. The code (notebook code cells, scripts, workflows) is licensed under the [MIT License](LICENSE), the text and images of the book under [CC BY 4.0](LICENSE-CC-BY-4.0), except the third-party material listed below. Copies distributed before this change keep their earlier GPL-3.0 license.
+© 2021-2026 Reto Marek. The code (notebook code cells, scripts, workflows) is licensed under the [MIT License](LICENSE), the text and images of the book under [CC BY 4.0](LICENSE-CC-BY-4.0), except the third-party data listed below. Copies distributed before this change keep their earlier GPL-3.0 license.
 
 ## Data sources and credits
 
 - `edap/sampleData/*.csv`: measurement data taken over from the R version of this book, [Energy Data Analysis with R](https://github.com/hslu-ige-laes/edar) (© Lucerne University of Applied Sciences and Arts, repository licensed GPL-3.0). Not covered by the CC BY license.
 - Sample data bundled with [pyedautils](https://github.com/retomarek/pyedautils) (loaded with `importlib.resources`): see that repository.
 - Weather data downloaded at build time: [MeteoSwiss open data](https://opendatadocs.meteoswiss.ch/) (source: MeteoSwiss) and [Agrometeo](https://www.agrometeo.ch/) (Agroscope); postal codes and altitudes via [pgeocode](https://github.com/symerio/pgeocode) (GeoNames) and [geo.admin.ch](https://www.geo.admin.ch/).
-- Cover image and logo (`edap/images/`): their source is not documented in this repository; they are not covered by the CC BY license until that is clarified.
+- Cover image and logo (`edap/images/`, also used in the banner, social preview and favicon): created by Reto Marek with AI image generation, licensed under CC BY 4.0 like the rest of the book.
 
 ## Credits
 
