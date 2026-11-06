@@ -1,0 +1,41 @@
+name: Bug report
+description: A page of the book has an error, a notebook does not run, or a plot or link is broken.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting. The details below help to find and fix the problem.
+  - type: input
+    id: page
+    attributes:
+      label: Book page
+      description: The URL of the page where the problem is.
+      placeholder: https://retomarek.github.io/edap/partDataVis/comfortMollierHx.html
+    validations:
+      required: true
+  - type: input
+    id: notebook
+    attributes:
+      label: Notebook (if you ran it yourself)
+      description: The notebook file and where you ran it (local Jupyter, VS Code, Google Colab).
+      placeholder: edap/partDataVis/comfortMollierHx.ipynb in Google Colab
+  - type: textarea
+    id: what
+    attributes:
+      label: What went wrong?
+      description: What did you expect, and what did you get instead? Screenshots help for plots and layout problems.
+    validations:
+      required: true
+  - type: textarea
+    id: traceback
+    attributes:
+      label: Error message
+      description: The full traceback, if there is one.
+      render: text
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Python version, OS and the versions of the relevant packages (pip show pyedautils pandas plotly), or the browser for display problems.
+      placeholder: Python 3.12 on Windows 11, pyedautils 0.0.33, pandas 2.3, plotly 6.3
+      render: text

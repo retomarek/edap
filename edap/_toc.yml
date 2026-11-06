@@ -7,7 +7,6 @@ chapters:
   - file: gettingStarted
     sections:
       - file: partGettingStarted/jupyterNotebooks
-        # was .md, now .ipynb for Colab launch button
       - file: partGettingStarted/packages
 
   - file: pythonBasics
@@ -19,7 +18,6 @@ chapters:
       - file: partPythonBasics/timeSeries
       - file: partPythonBasics/eda
       - file: partPythonBasics/dataQuality
-      - file: partPythonBasics/influxdb
       - file: partPythonBasics/meteoData
 
   - file: dataVis
@@ -75,5 +73,6 @@ chapters:
   - file: appendix
     sections:
       - file: appendix/packages
+      - file: appendix/influxdb
       - file: appendix/resources
       - file: appendix/installPython

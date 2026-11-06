@@ -1,8 +1,8 @@
 # Sum & Frequency
 
-Aggregated views of energy data by day or hour help to identify consumption patterns, peak loads, and unusual events.
+Duration curves sort the consumption of each day or hour from highest to lowest. They show how often a consumption level is exceeded, how high the peaks are and how much of the time the base load runs.
 
 ## Recipes
 
-- **Daily Sums** — Bar chart of daily energy consumption or production
-- **Hourly Frequency** — Distribution of hourly values as a frequency chart
+- **Daily Duration Curve** — Daily consumption sorted from highest to lowest
+- **Hourly Duration Curve** — Hourly consumption sorted from highest to lowest

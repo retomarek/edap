@@ -1,10 +1,10 @@
 #######################################################################################
 # Book settings
-# Learn more at https://jupyterbook.org/customize/config.html
+# Learn more at https://jupyterbook.org/v1/customize/config.html
 
 title: Energy Data Analysis with Python
 author: Reto Marek
-copyright: "2026"
+copyright: "2021-2026"
 logo: logo.png
 
 #######################################################################################
@@ -32,13 +32,13 @@ parse:
 #######################################################################################
 # HTML-specific settings
 html:
-  favicon: ""
+  favicon: images/favicon.png
   use_edit_page_button: true
   use_repository_button: true
   use_issues_button: true
-  use_multitoc_numbering: true
   home_page_in_navbar: true
-  extra_footer: ""
+  extra_footer: |
+    <p>Code: <a href="https://github.com/retomarek/edap/blob/main/LICENSE">MIT License</a>. Text and images: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, except third-party data (see <a href="https://github.com/retomarek/edap#data-sources-and-credits">data sources and credits</a>).</p>
 
 #######################################################################################
 # Launch button settings
@@ -74,8 +74,3 @@ sphinx:
       - custom.css
     html_theme_options:
       use_download_button: false
-
-#######################################################################################
-# BibTeX settings
-bibtex_bibfiles:
-  - references.bib

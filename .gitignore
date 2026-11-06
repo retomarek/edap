@@ -30,3 +30,7 @@ desktop.ini
 
 # Misc
 *.log
+
+# Files written by the notebooks
+*.pkl
+*.pklz

@@ -32,11 +32,11 @@ Optional parameters for colors, labels, and layout.
 
 The visualizations are organized into the following categories:
 
-- **Statistical** — Boxplots, density plots, cross-correlations
+- **Statistical** — Boxplots, histograms, density by season, correlation, outliers, autocorrelation, cross-correlation
 - **Decomposition** — Long-term and short-term time series decomposition
 - **Seasonal** — Overlapping years, miniplots, polar charts, before/after comparisons
 - **Heat Maps** — Calendar heat maps and median week patterns
-- **Daily Profiles** — Overview, overlayed, mean, and decomposed profiles
-- **Sum & Frequency** — Daily and hourly aggregations
-- **Comfort** — Temperature-humidity, Mollier h-x, SIA 180 diagrams
+- **Daily Profiles** — Overview, overlaid, mean, and decomposed profiles
+- **Sum & Frequency** — Daily and hourly duration curves
+- **Comfort** — Temperature and humidity over time, temperature vs. humidity, Mollier h-x, comfort donuts, comfort compass, SIA 180
 - **Miscellaneous** — Energy signatures, household electricity, multi-axis plots

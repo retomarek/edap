@@ -7,6 +7,15 @@ on:
       - "edap/**"
       - "requirements.txt"
       - ".github/workflows/deploy.yml"
+  # Pull requests and a weekly run only build the book (all notebooks executed), so
+  # broken notebooks and changed data sources show up before the next deploy.
+  pull_request:
+    paths:
+      - "edap/**"
+      - "requirements.txt"
+      - ".github/workflows/deploy.yml"
+  schedule:
+    - cron: "0 5 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -15,14 +24,14 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PLOTLY_RENDERER: notebook
+      DEPLOY: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
     steps:
       - uses: actions/checkout@v6
 
@@ -40,6 +49,7 @@ jobs:
           playwright install chromium
 
       - name: Build Jupyter Book (PDF)
+        if: env.DEPLOY == 'true'
         run: |
           jupyter-book build edap/ --builder pdfhtml
           mkdir -p edap/_build/pdf_tmp
@@ -47,10 +57,12 @@ jobs:
 
       - name: Build Jupyter Book (HTML)
         run: |
-          jupyter-book build edap/
-          cp edap/_build/pdf_tmp/edap.pdf edap/_build/html/edap.pdf
+          # Without a deploy, any warning (e.g. a notebook that fails to execute) fails the run
+          if [ "$DEPLOY" = "true" ]; then jupyter-book build edap/; else jupyter-book build edap/ -W --keep-going; fi
+          if [ -f edap/_build/pdf_tmp/edap.pdf ]; then cp edap/_build/pdf_tmp/edap.pdf edap/_build/html/edap.pdf; fi
 
       - name: Upload artifact
+        if: env.DEPLOY == 'true'
         uses: actions/upload-pages-artifact@v4
         with:
           path: edap/_build/html
@@ -61,6 +73,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

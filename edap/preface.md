@@ -6,12 +6,12 @@ The book is organized in three main parts:
 
 ```{admonition} Part I — Getting Started
 :class: hint
-Set up your Python environment, learn about Jupyter Notebooks, and install the required packages including [pyedautils](https://pypi.org/project/pyedautils/) and [influxdb-toolkit](https://pypi.org/project/influxdb-toolkit/).
+Set up your Python environment, learn about Jupyter Notebooks, and install the required packages including [pyedautils](https://retomarek.github.io/pyedautils/).
 ```
 
 ```{admonition} Part II — Python Basics
 :class: hint
-Covers general data analysis tasks: pandas fundamentals, data loading, datetime handling, wrangling, time series operations, exploratory analysis, data quality assessment, and database connectivity with InfluxDB.
+Covers general data analysis tasks: pandas fundamentals, data loading, datetime handling, wrangling, time series operations, exploratory analysis, data quality assessment, and Swiss weather data.
 ```
 
 ```{admonition} Part III — Data Visualizations
@@ -24,19 +24,23 @@ Each visualization recipe follows a consistent pattern: goal, data basis, data p
 
 In the [EVISU study](https://github.com/hslu-ige-laes/evisu), researchers at the Lucerne University of Applied Sciences and Arts asked industry experts how and where they perform energy analyses. The result: many rely either on Excel or on expensive building monitoring applications.
 
-Excel users often push the software to its limits as data volumes continue to grow. Users of monitoring applications, on the other hand, benefit from built-in functionality and visualizations. For more complex tasks, switching to an analysis environment such as Python or R becomes almost inevitable—but the learning curve is steep. At the same time, there have been very few specialist applications to date that are specifically tailored to the field of energy and building services engineering and enable efficient data analysis and visualisation.
+Excel users often push the software to its limits as data volumes continue to grow. Users of monitoring applications, on the other hand, benefit from built-in functionality and visualizations. For more complex tasks, switching to an analysis environment such as Python or R becomes almost inevitable—but the learning curve is steep. At the same time, there have been very few specialist applications to date that are specifically tailored to the field of energy and building services engineering and enable efficient data analysis and visualization.
 
 This book aims to bridge that gap and make it easier to get started with Python.
 
 ```{tip}
-Wondering why Python and not R? I use both! Check out the R version: [Engineering Data Analysis in R](https://hslu-ige-laes.github.io/edar/).
+Wondering why Python and not R? I use both! Check out the R version: [Energy Data Analysis with R](https://hslu-ige-laes.github.io/edar/).
 But to be honest, Python is much more widely used in the industry...
 ```
 
 ## Acknowledgements
 
-This book is inspired by the [R Graphics Cookbook](https://r-graphics.org/) and [Engineering Data Analysis in R](https://hslu-ige-laes.github.io/edar/).
+This book is inspired by the [R Graphics Cookbook](https://r-graphics.org/) and [Engineering Data Analysis in R](https://smogdr.github.io/edar_coursebook/), and it is the Python counterpart of [Energy Data Analysis with R](https://hslu-ige-laes.github.io/edar/).
 
 It was developed using [Jupyter Book](https://jupyterbook.org), an open-source project for building publication-quality books from computational material. The book combines Python code, Jupyter Notebooks, data, and text — all examples are re-executed every time the book is rebuilt.
 
 Hosted on [GitHub Pages](https://pages.github.com). Source available on [GitHub](https://github.com/retomarek/edap).
+
+## License
+
+The code in this book is licensed under the [MIT License](https://github.com/retomarek/edap/blob/main/LICENSE), the text and images under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Some sample data comes from third parties, see [data sources and credits](https://github.com/retomarek/edap#data-sources-and-credits).

@@ -8,10 +8,10 @@ The following chapters give an overview of the basic principles needed to unders
 - **Loading Data** — Import data from CSV, Excel, JSON, and URLs
 - **Datetime Handling** — Parse timestamps, handle time zones, use the dt accessor
 - **Data Wrangling** — Reshape, filter, merge, and transform data
-- **Time Series** — Resampling, rolling windows, and frequency detection
+- **Time Series** — Regular time grids, resampling, rolling windows, and gap filling
 - **Exploratory Data Analysis** — Descriptive statistics and visual exploration
-- **Data Quality** — Detect and handle missing values, duplicates, and outliers
-- **InfluxDB** — Connect to InfluxDB time series databases
+- **Data Quality** — Detect and handle missing values, gaps, and duplicates
+- **Meteo Data** — Find Swiss weather stations and download weather data
 ```
 
 It is not the goal of this book to provide a complete introduction to Python. There are many excellent resources for learning the fundamentals:

@@ -47,7 +47,7 @@ Do not mix `venv` and `conda` — use one or the other. If you installed Python 
 Use `pip` to install packages:
 
 ```bash
-pip install pandas plotly pyedautils influxdb-toolkit
+pip install pandas plotly pyedautils
 ```
 
 Or install all packages used in this book at once:
@@ -77,10 +77,8 @@ If a package is not available via `conda` (e.g. `pyedautils`), install it with `
 | [numpy](https://numpy.org/) | Numerical computing |
 | [plotly](https://plotly.com/python/) | Interactive visualizations |
 | [matplotlib](https://matplotlib.org/) | Static visualizations |
-| [pyedautils](https://pypi.org/project/pyedautils/) | Energy data analysis utilities — ready-to-use visualization functions |
-| [influxdb-toolkit](https://pypi.org/project/influxdb-toolkit/) | Connect to InfluxDB v1/v2 time series databases |
+| [pyedautils](https://retomarek.github.io/pyedautils/) | Energy data analysis utilities — ready-to-use analysis and visualization functions |
 | [statsmodels](https://www.statsmodels.org/) | Time series decomposition and statistics |
-| [kaleido](https://github.com/plotly/Kaleido) | Static image export for Plotly |
 
 ## Updating Packages
 

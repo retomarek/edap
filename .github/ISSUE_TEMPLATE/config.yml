@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or idea
+    url: https://github.com/retomarek/edap/discussions/categories/q-a
+    about: Ask about a chapter, a notebook or reading a plot, or share an idea in Q&A. Issues are for errors in the book and topic suggestions.
+  - name: Read the book
+    url: https://retomarek.github.io/edap/intro.html
+    about: Energy Data Analysis with Python, the online book with interactive plots.
+  - name: pyedautils
+    url: https://github.com/retomarek/pyedautils/issues/new/choose
+    about: A bug or feature request for a pyedautils function itself (the library used throughout the book).

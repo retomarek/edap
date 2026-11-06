@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap">
+<!-- GitHub social preview (1280x640) in the style of the book logo. Keep text inside the safe area
+     (about 40 px margin all round, GitHub crops on some surfaces). Paper texture and cup are cropped
+     from edap/images/logo_big.png (1536x1024); the plots are docs/images/branding_*.png. All made by
+     scripts/render_branding.py. -->
+<style>
+html,body{margin:0;width:1280px;height:640px;overflow:hidden}
+/* Paper: the clean top strip of logo_big.png (y 0-255), stretched vertically along its fibres. */
+body{background:#d8bba3 url(../edap/images/logo_big.png) no-repeat;background-size:1536px 2570px;background-position:-128px 0;
+  font-family:Lexend,sans-serif;color:#333536;position:relative}
+/* Cup with handle: x 130-612, y 240-665 of logo_big.png; round masks fade its surroundings into the paper. */
+.cup{position:absolute;left:62px;top:62px;width:482px;height:425px;zoom:.5;background:url(../edap/images/logo_big.png) no-repeat -130px -240px;
+  -webkit-mask-image:radial-gradient(circle at 215px 210px,#000 196px,transparent 232px),radial-gradient(64px 58px at 412px 296px,#000 75%,transparent 100%);
+  mask-image:radial-gradient(circle at 215px 210px,#000 196px,transparent 232px),radial-gradient(64px 58px at 412px 296px,#000 75%,transparent 100%)}
+.left{position:absolute;left:72px;top:262px;width:560px}
+h1{margin:0;font-size:96px;font-weight:600;letter-spacing:-2px;line-height:.95}
+.tag{margin:8px 0 0 3px;font-size:31px;font-weight:400;color:#262626;letter-spacing:-.2px}
+.sub{margin:18px 0 0 3px;font-size:21px;line-height:1.45;color:#4a3d33;max-width:520px}
+.chips{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0 0 3px;max-width:540px}
+.chip{font-size:16px;font-weight:500;padding:6px 13px;border-radius:999px;background:rgba(255,250,243,.55);border:1.5px solid;white-space:nowrap}
+.c1{border-color:#6f4a2a;color:#5a3a1f}.c2{border-color:#b8691f;color:#8f4f14}.c3{border-color:#7d7a35;color:#5c5a22}.c4{border-color:#4a4c4e;color:#333536}
+.card{position:absolute;background:#fffdf9;border-radius:14px;box-shadow:0 18px 40px rgba(74,48,26,.28),0 2px 6px rgba(74,48,26,.18);overflow:hidden}
+.card img{display:block;width:100%}
+.s1{left:652px;top:40px;width:584px;transform:rotate(-1.2deg)}
+.s2{left:604px;top:398px;width:214px;height:214px;transform:rotate(2deg)}
+.s2 img{width:118%;margin:-4% 0 0 -9%}
+</style></head><body>
+<div class="cup" role="img" aria-label="Coffee cup with Python latte art"></div>
+<div class="left">
+  <h1>edap</h1>
+  <div class="tag">Energy Data Analysis with Python</div>
+  <div class="sub">An interactive online book: load, check, analyze and plot energy and comfort time series.</div>
+  <div class="chips"><span class="chip c1">Jupyter notebooks</span><span class="chip c2">pandas &amp; Plotly</span><span class="chip c3">Comfort &amp; Mollier h,x</span><span class="chip c4">pyedautils</span></div>
+</div>
+<div class="card s1"><img src="../docs/images/branding_mollier_hx.png" alt=""></div>
+<div class="card s2"><img src="../docs/images/branding_comfort_compass.png" alt=""></div>
+</body></html>

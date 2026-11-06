@@ -1,0 +1,19 @@
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question or idea
+      description: About a chapter, a notebook, reading a plot or an idea for a new topic. For errors in the book, please open an issue instead.
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Book page (optional)
+      placeholder: https://retomarek.github.io/edap/partDataVis/comfortCompass.html
+  - type: textarea
+    id: code
+    attributes:
+      label: Code (optional)
+      description: The relevant lines, e.g. the call and a few rows of your DataFrame (df.head()).
+      render: python
