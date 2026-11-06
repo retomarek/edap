@@ -1,6 +1,6 @@
 #######################################################################################
 # Book settings
-# Learn more at https://jupyterbook.org/customize/config.html
+# Learn more at https://jupyterbook.org/v1/customize/config.html
 
 title: Energy Data Analysis with Python
 author: Reto Marek
@@ -36,7 +36,6 @@ html:
   use_edit_page_button: true
   use_repository_button: true
   use_issues_button: true
-  use_multitoc_numbering: true
   home_page_in_navbar: true
   extra_footer: ""
 
@@ -74,8 +73,3 @@ sphinx:
       - custom.css
     html_theme_options:
       use_download_button: false
-
-#######################################################################################
-# BibTeX settings
-bibtex_bibfiles:
-  - references.bib

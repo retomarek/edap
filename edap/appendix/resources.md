@@ -2,7 +2,8 @@
 
 ## Related Books
 
-- [Engineering Data Analysis in R (edar)](https://hslu-ige-laes.github.io/edar/) — The R version of this book, covering similar topics with R and ggplot2
+- [Energy Data Analysis with R (edar)](https://hslu-ige-laes.github.io/edar/) — The R version of this book, covering similar topics with R and ggplot2
+- [Engineering Data Analysis in R](https://smogdr.github.io/edar_coursebook/) — Course book by John Volckens and Kathleen E. Wendt
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) — Comprehensive introduction to data science with Python
 - [R Graphics Cookbook](https://r-graphics.org/) — Inspiration for the recipe-based approach
 
@@ -16,7 +17,7 @@
 ## Energy Data & Standards
 
 - [SIA 180:2014](https://www.sia.ch/) — Swiss standard for thermal protection, moisture, and indoor climate in buildings
-- Eriksson, M. (2020) — Performance Evaluation of Buildings using the Energy Signature (PES) method
+- Eriksson, Akander, Moshfegh (2020): [Development and validation of energy signature method](https://doi.org/10.1016/j.enbuild.2020.109756), Energy and Buildings 210 — the Proposed Energy Signature (PES)
 
 ## Tools & Projects
 
