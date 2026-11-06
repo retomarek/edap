@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/retomarek/edap/main/docs/banner.png" alt="edap: Energy Data Analysis with Python, an interactive online book" width="100%">
+  <img src="docs/banner.png" alt="edap: Energy Data Analysis with Python, an interactive online book" width="100%">
 </p>
 
 <p align="center"><b><a href="https://retomarek.github.io/edap/intro.html">Read the book: retomarek.github.io/edap</a></b></p>
@@ -9,17 +9,18 @@
   <a href="https://jupyterbook.org/v1/"><img alt="Jupyter Book 1" src="https://img.shields.io/badge/Jupyter%20Book-v1-F37726?style=flat-square&logo=jupyter&logoColor=white"></a>
   <a href="https://pypi.org/project/pyedautils/"><img alt="pyedautils on PyPI" src="https://img.shields.io/pypi/v/pyedautils?style=flat-square&label=pyedautils&color=41BDF5&cacheSeconds=3600"></a>
   <a href="https://github.com/retomarek/edap/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/retomarek/edap/main?style=flat-square&color=9acd32&cacheSeconds=3600"></a>
-  <a href="LICENSE"><img alt="License: GPLv3" src="https://img.shields.io/badge/license-GPLv3-blue?style=flat-square"></a>
+  <a href="LICENSE"><img alt="Code license: MIT" src="https://img.shields.io/badge/code-MIT-blue?style=flat-square"></a>
+  <a href="LICENSE-CC-BY-4.0"><img alt="Text and images license: CC BY 4.0" src="https://img.shields.io/badge/text%20%26%20images-CC%20BY%204.0-blue?style=flat-square"></a>
 </p>
 
 <p align="center">An interactive online book for analyzing and visualizing energy and comfort time series data with Python.</p>
 
 <p align="center">
-  <a href="https://retomarek.github.io/edap/partDataVis/comfortMollierHx.html"><img src="https://raw.githubusercontent.com/retomarek/edap/main/docs/images/branding_mollier_hx.png" alt="Mollier h-x diagram from the book: a year of room climate coloured by season, with comfort zone, warning bands, outside air and ventilation line" width="57%"></a>
-  <a href="https://retomarek.github.io/edap/partDataVis/comfortCompass.html"><img src="https://raw.githubusercontent.com/retomarek/edap/main/docs/images/branding_comfort_compass.png" alt="Comfort compass from the book: share of days in range and per deviation direction" width="40%"></a>
+  <a href="https://retomarek.github.io/edap/partDataVis/comfortMollierHx.html"><img src="docs/images/branding_mollier_hx.png" alt="Mollier h-x diagram from the book: a year of room climate colored by season, with comfort zone, warning bands, outside air and ventilation line" width="57%"></a>
+  <a href="https://retomarek.github.io/edap/partDataVis/comfortCompass.html"><img src="docs/images/branding_comfort_compass.png" alt="Comfort compass from the book: share of days in range and per deviation direction" width="40%"></a>
 </p>
 
-> **Built on [pyedautils](https://github.com/retomarek/pyedautils)**, the *Python Energy Data Analysis Utilities*: a pip-installable library (`pip install pyedautils`) for analysing and visualising energy and comfort time series. Most recipes in this book call one of its functions, and its [documentation](https://retomarek.github.io/pyedautils/) has the full API reference and [guides on reading the h,x diagram and the comfort compass](https://retomarek.github.io/pyedautils/guides/).
+> **Built on [pyedautils](https://github.com/retomarek/pyedautils)**, the *Python Energy Data Analysis Utilities*: a pip-installable library (`pip install pyedautils`) for analyzing and visualizing energy and comfort time series. Most recipes in this book call one of its functions, and its [documentation](https://retomarek.github.io/pyedautils/) has the full API reference and [guides on reading the h,x diagram and the comfort compass](https://retomarek.github.io/pyedautils/guides/).
 
 ## Why this book
 
@@ -29,17 +30,17 @@ Energy and comfort data from buildings are time series: smart meter readings, ro
 
 - **Preface**
 - **Part I: Getting Started**: Jupyter Notebooks, Python Packages
-- **Part II: Python Basics**: Pandas Introduction, Loading Data, Datetime Handling, Data Wrangling, Time Series, Exploratory Data Analysis (EDA), Data Quality, InfluxDB (time series database), Meteo Data
+- **Part II: Python Basics**: Pandas Introduction, Loading Data, Datetime Handling, Data Wrangling, Time Series, Exploratory Data Analysis (EDA), Data Quality, Meteo Data
 - **Part III: Data Visualizations**
-  - **Statistical Plots**: Boxplot, Density Plot, Density Plot by Season, Correlation & Scatter, Outlier Detection, Autocorrelation, Cross-Correlation
+  - **Statistical Plots**: Boxplot, Histogram, Density Plot by Season, Correlation & Scatter, Outlier Detection, Autocorrelation, Cross-Correlation
   - **Time Series Decomposition**: Long-Term, Short-Term
   - **Seasonal Visualizations**: Overlapping Years, Miniplots, Polar Chart, Before / After Comparison
   - **Heat Maps**: Calendar Heat Map, Median Weeks
-  - **Daily Profiles**: Overview, Overlayed Profiles, Mean Profile, Decomposed Profile
+  - **Daily Profiles**: Overview, Overlaid Profiles, Mean Profile, Decomposed Profile
   - **Sum & Frequency**: Daily Duration Curve, Hourly Duration Curve
   - **Comfort Diagrams**: Temperature & Humidity Over Time, Temperature vs. Humidity, [Mollier h-x Diagram](https://retomarek.github.io/edap/partDataVis/comfortMollierHx.html), Comfort Donuts, [Comfort Compass](https://retomarek.github.io/edap/partDataVis/comfortCompass.html), SIA 180 Adaptive Comfort
   - **Miscellaneous**: Energy Signature, Energy Signature (PES), Electricity Household, Multiple Y-Axes
-- **Appendix**: Python Packages Overview, Resources, Python Installation & IDE Setup
+- **Appendix**: Python Packages Overview, InfluxDB, Resources, Python Installation & IDE Setup
 
 The whole book is also available as a [PDF](https://retomarek.github.io/edap/edap.pdf).
 
@@ -127,7 +128,14 @@ The social preview has to be uploaded manually under *Settings → General → S
 
 ## License
 
-GPL-3.0 © Reto Marek, see [LICENSE](LICENSE).
+© 2021-2026 Reto Marek. The code (notebook code cells, scripts, workflows) is licensed under the [MIT License](LICENSE), the text and images of the book under [CC BY 4.0](LICENSE-CC-BY-4.0), except the third-party material listed below. Copies distributed before this change keep their earlier GPL-3.0 license.
+
+## Data sources and credits
+
+- `edap/sampleData/*.csv`: measurement data taken over from the R version of this book, [Energy Data Analysis with R](https://github.com/hslu-ige-laes/edar) (© Lucerne University of Applied Sciences and Arts, repository licensed GPL-3.0). Not covered by the CC BY license.
+- Sample data bundled with [pyedautils](https://github.com/retomarek/pyedautils) (loaded with `importlib.resources`): see that repository.
+- Weather data downloaded at build time: [MeteoSwiss open data](https://opendatadocs.meteoswiss.ch/) (source: MeteoSwiss) and [Agrometeo](https://www.agrometeo.ch/) (Agroscope); postal codes and altitudes via [pgeocode](https://github.com/symerio/pgeocode) (GeoNames) and [geo.admin.ch](https://www.geo.admin.ch/).
+- Cover image and logo (`edap/images/`): their source is not documented in this repository; they are not covered by the CC BY license until that is clarified.
 
 ## Credits
 
